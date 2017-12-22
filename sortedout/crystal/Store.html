@@ -1,0 +1,499 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Store | Funky Factory</title>
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/my-style.css"/>
+
+</head>
+
+
+<body>
+
+
+    <a onclick="Menu()" title="Return To Dashboard"><span class="dasboard-icon"></span></a>
+    <div class="mainHeading">Store</div>
+    <a onclick="LogOut()" title="Logout"><span class="logout-icon"></span></a>
+
+    <div class="alert alert-success" style="display:none" role="alert" id="SuccessMessage"></div>
+
+    <div class="alert alert-danger" style="display:none" role="alert" id="FailMessage"></div>
+
+
+    <!-- -->
+
+    <form>
+    <fieldset>
+    <div class="row">
+    <div class="underline-row">
+        <div class="col-sm-2 col-xs-6">
+            <label class="form-label">Default Account</label>
+        </div>
+        <div class="col-sm-4 col-xs-6">
+            <input class="form-control" id="txtCustCNIC" />
+            <label class="form-control" style="display:none" id="lblDefaultAcct"></label>
+        </div>
+    </div>
+        <div class="underline-row">
+            <div class="col-sm-2 col-xs-6">
+                <label class="form-label">Available Balance</label>
+            </div>
+            <div class="col-sm-4 col-xs-6">
+                <label class="form-control" id="lblAvailableBal" />
+
+            </div>
+        </div>
+    </div>
+    </fieldset>
+    </form>
+
+    <form>
+        <fieldset>
+        
+            <div class="row">
+                <div class="underline-row" id="payto-div" style="display:none">
+                    <div class="col-sm-2 col-xs-6">
+                        <label class="form-label">Pay To</label>
+                    </div>
+                    <div class="col-sm-4 col-xs-6">
+                        <input class="form-control" id="txtBenCNIC" />
+                        <label style="display:none" id="lblBenAlias" class="form-control"></label>
+                        <div class="search-icon" style="position:absolute; display:none;">
+                            <button type="button" class="btn btn-default" id="SearchAlias" value="Search"><i class="glyphicon glyphicon-search"></i><span class="loader hide"></span></button>
+                        </div>
+
+                        <div id="SearchMessage" style="display:none">
+                            <label style="color:darkred;font-size:small;" id="lblSearchMessage"></label>
+                        </div>
+
+                        <div id="CustomerNameDIV" style="display:none">
+                            <label class="field-label">Store Name :</label>
+                            <label class="field-value" id="lblCustName"></label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="underline-row" id="trans-amount-div" style="display:none">
+                    <div class="col-sm-2 col-xs-6">
+                        <label class="form-label">Amount</label>
+                    </div>
+                    <div class="col-sm-4 col-xs-6">
+                        <input class="form-control" id="txtTxnAmount" />
+                        <label class="form-control" style="display:none" id="lblTransactionAmount"></label>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="btn-group pull-right">
+
+                <button type="button" class="btn btn-primary col-xs-12" id="btnScanQR" value="ScanQR" onclick="QRCode()">Scan QR</button>
+
+                <button type="button" class="btn btn-primary col-xs-12" id="btnProceed" value="Proceed" onclick="Proceed()" style="display:none">Proceed</button>
+                <button type="button" class="btn btn-primary col-xs-12" style="display:none" id="btnFundsTransfer" value="Confirm" onclick="TransferFunds()" >Confirm</button>
+
+            </div>
+        </fieldset>
+    </form>
+
+    <!-- -->
+
+     <!--<h1>Store</h1>
+     <label style="color:forestgreen;font-size:large;font-style:italic" id="lblMessage"></label>
+    <div><label>Default Account: </label><input type="text" id="txtCustCNIC" /><label style="visibility:hidden" id="lblDefaultAcct"></label></div><div><label>Available Balance:</label><label id="lblAvailableBal"></label></div>
+    <div><label>Beneficiary Alias: </label><input type="text" id="txtBenCNIC" /><label style="visibility:hidden" id="lblBenAlias"></label></div>
+    <div id="SearchMessage" style="display:none"><label style="color:darkred;font-size:small;" id="lblSearchMessage"></label></div>
+    <div id="CustomerNameDIV" style="display:none"><label >Customer Name: </label><label id="lblCustName"></label></div>
+    <div><label>Transaction Amount: </label><input type="text" id="txtTxnAmount" /><label style="visibility:hidden" id="lblTransactionAmount"></label></div>
+           
+    <div><input  type="button" id="btnScanQR" value="ScanQR" onclick="QRCode()"/></div>
+    <div><input  type="button" id="btnProceed" value="Proceed" onclick="Proceed()"/></div>
+     <div><input  style="visibility:hidden" type="button" id="btnFundsTransfer" value="Confirm" onclick="TransferFunds()"/></div>
+    <div><input type="button" id="btnLogOut" value="LogOut" onclick="LogOut()"/></div>
+     <div><input type="button" id="btnMain" value="Go to Menu" onclick="Menu()"/></div>-->
+
+
+      <div class="cert-successful-container-screen" style="display:none"></div>
+            <div class="cert-successful-container" style="display:none">
+            <div> <img id="imgQR" src="assets/img/qrcode.jpg" style="height:40%;width:35%"/></div>
+                
+
+            </div>
+
+    <script>
+
+        function QRCode() {
+
+           
+
+
+            $(".cert-successful-container-screen").css("display","inline-block");
+            $(".cert-successful-container").css("display", "inline-block");
+        }
+
+        $(".cert-successful-container-screen").on("click", function () {
+
+
+            if ($(".cert-successful-container-screen").css("display","inline-block")) {
+                $(".cert-successful-container-screen").css("display","none");
+                $(".cert-successful-container").css("display","none");
+            }
+
+        });
+
+        function Menu() {
+            location.href = "DashBoard.html";
+        }
+        var Handler_ID;
+        $(document).ready(function () {
+
+            //$("#btnProceed").css("display", "none");
+            $("#txtCustCNIC").val(sessionStorage.getItem('DefaultSVA'));
+            $("#txtCustCNIC").prop('disabled', true);
+            var length = sessionStorage.getItem('AvailableBalance').length - 2;
+            var FormattedAvailableBalance = sessionStorage.getItem('AvailableBalance').substr(0, length) + '.' + sessionStorage.getItem('AvailableBalance').substr(length, 2);
+            $("#lblAvailableBal").text(FormattedAvailableBalance);
+            $("#SearchAlias").click(function (e) {
+                FetchAliasInfo($("#txtBenCNIC").val());
+            });
+           
+            $("#imgQR").click(function (e) {
+                $(".cert-successful-container-screen").css("display", "none");
+                $(".cert-successful-container").css("display", "none");
+                $("#txtBenCNIC").val('03453630059');
+                FetchAliasInfo('03453630059');
+                $("#txtTxnAmount").val('7775.00');
+                $("#txtTxnAmount").prop('disabled', true);
+                $("#txtBenCNIC").prop('disabled', true);
+                $("#btnScanQR").css("display", "none");
+                $("#btnProceed").css("display", "block");
+
+           
+                $("#trans-amount-div").css("display", "block");
+                $("#payto-div").css("display", "block");
+
+
+
+            });
+        });
+        function Proceed() {
+            $("#btnProceed").css("display","none");
+            $("#btnFundsTransfer").css("display", "inline-block");
+            $("#lblTransactionAmount").css("display", "block");
+            $("#lblTransactionAmount").text($("#txtTxnAmount").val());
+            $("#txtTxnAmount").css("display", "none");
+            $("#lblBenAlias").text($("#txtBenCNIC").val());
+            $("#lblBenAlias").css("display", "block");
+            $("#txtBenCNIC").css("display", "none");
+            $("#lblDefaultAcct").text($("#txtCustCNIC").val());
+            $("#lblDefaultAcct").css("display", "block");
+            $("#txtCustCNIC").css("display", "none");
+            $("#SearchAlias").hide();
+
+        }
+        function LogOut() {
+            $.ajax({
+                type: "DELETE",
+                url: "http://192.168.64.10:8123/api/v1/Customers/" + sessionStorage.getItem('UserID') + "?LicenseKey=LA1214545&IsApplication=0&UserName=" + sessionStorage.getItem('UserID') + "&Password=" + sessionStorage.getItem('Password') + "&SessionID=" + sessionStorage.getItem('SessionID'),
+
+                beforeSend: function (request) {
+
+                    request.setRequestHeader("Authorization", "Bearer 9cd19f21-932f-4b02-b26d-ded9eed66842");
+                    request.setRequestHeader("LicenseKey", "A394F15662BE3095C4D7B51F43EAEC9ACAB6A080");
+                },
+                dataType: 'json',
+                crossDomain: true,
+                contentType: "application/json; charset=utf-8",
+                error: function (request, status, error) {
+
+                    $("#FailMessage").css("display", "inline-block");
+                    $("#FailMessage").text(request.responseText);
+
+                },
+
+                success: function (response) {
+                    console.log(response);
+            location.href = "PRISM-newui-login.html";
+                }
+            });
+        }
+        function FetchAliasInfo(Alias) {
+            $.ajax({
+                type: "GET",
+                url: "http://192.168.64.10:8123/api/v1/Customers/info/" + Alias + "?LicenseKey=A394F15662BE309&IsApplication=0&UserName=" + sessionStorage.getItem('UserID') + "&Password=" + sessionStorage.getItem('Password') + "&SessionID=" + sessionStorage.getItem('SessionID'),
+
+                beforeSend: function (request) {
+
+                    request.setRequestHeader("Authorization", "Bearer 9cd19f21-932f-4b02-b26d-ded9eed66842");
+                    request.setRequestHeader("LicenseKey", "A394F15662BE3095C4D7B51F43EAEC9ACAB6A080");
+                },
+                dataType: 'json',
+                crossDomain: true,
+                contentType: "application/json; charset=utf-8",
+                error: function (request, status, error) {
+
+                    $("#FailMessage").css("display", "inline-block");
+                    $("#FailMessage").text(request.responseText);
+
+                },
+
+                success: function (response) {
+
+                    $("#btnConfirm").css("display", "none");
+
+
+                    if (response.ResponseCode == "00") {
+                        $("#SearchMessage").hide();
+                        console.log("Alias");
+                        console.log(response);
+                        $("#CustomerNameDIV").css("display", "block");
+                        $("#lblCustName").text(response.ResponseData.Customer_Information.FIRSTNAME + ' ' + response.ResponseData.Customer_Information.LASTNAME);
+                       
+                    }
+                    else {
+                       // $("#FailMessage").css("display", "inline-block");
+                       // $("#FailMessage").text(response.ReponseMessage);
+                 
+                   
+
+                      
+                    }
+
+
+
+                    //location.href = "CustomerRegistration.html";
+                }
+            });
+        }
+        function TransferFunds() {
+            
+            if ($("#txtTxnAmount").val().indexOf('.') != -1) {
+                var TxnAmount = $("#txtTxnAmount").val().replace(".", "");
+            }
+            else {
+                var TxnAmount = $("#txtTxnAmount").val() + '00';
+            }
+            console.log(TxnAmount);
+            var FormattedAmt = pad(TxnAmount, 12);
+            console.log(FormattedAmt);
+            $.ajax({
+                type: "POST",
+                url: "http://192.168.64.10:8123/api/v1/Customers/FundTranasfer/" + FormattedAmt + "/586/" + sessionStorage.getItem("Alias") + "/" + $("#txtBenCNIC").val() + "?LicenseKey=LA1214545&IsApplication=0&UserName=" + sessionStorage.getItem('UserID') + "&Password=" + sessionStorage.getItem('Password') + "&SessionID=" + sessionStorage.getItem('SessionID'),
+
+                beforeSend: function (request) {
+
+                    request.setRequestHeader("Authorization", "Bearer 9cd19f21-932f-4b02-b26d-ded9eed66842");
+                    request.setRequestHeader("LicenseKey", "A394F15662BE3095C4D7B51F43EAEC9ACAB6A080");
+                },
+                dataType: 'json',
+                crossDomain: true,
+                contentType: "application/json; charset=utf-8",
+                error: function (request, status, error) {
+
+                    $("#FailMessage").css("display", "inline-block");
+                    $("#FailMessage").text(request.responseText);
+
+                },
+
+                success: function (response) {
+                    console.log(response);
+                    GetWalletID(sessionStorage.getItem("Alias"));
+                    if (response.ResponseCode == "-1") {
+                       
+                        $("#FailMessage").css("display", "inline-block");
+                        $("#FailMessage").text(response.ReponseMessage);
+                    }
+                    else {
+                        $("#SuccessMessage").css("display", "inline-block");
+                        $("#SuccessMessage").text(response.ReponseMessage);
+                        $("#btnFundsTransfer").css("display", "none");
+                    }
+
+                }
+            });
+        }
+        function pad(number, length) {
+
+            var str = '' + number;
+            while (str.length < length) {
+                str = '0' + str;
+            }
+
+            return str;
+
+        }
+
+        function GetWalletID(CustomerID) {
+            $.ajax({
+                type: "GET",
+                url: "http://192.168.64.10:8123/api/v1/Customers/" + CustomerID + "/wallets?LicenseKey=A394F15662BE309&IsApplication=0&UserName=" + sessionStorage.getItem('UserID') + "&Password=" + sessionStorage.getItem('Password') + "&SessionID=" + sessionStorage.getItem('SessionID'),
+
+                beforeSend: function (request) {
+
+                    request.setRequestHeader("Authorization", "Bearer 9cd19f21-932f-4b02-b26d-ded9eed66842");
+                    request.setRequestHeader("LicenseKey", "A394F15662BE3095C4D7B51F43EAEC9ACAB6A080");
+                },
+                dataType: 'json',
+                crossDomain: true,
+                contentType: "application/json; charset=utf-8",
+                error: function (request, status, error) {
+
+                    $("#FailMessage").css("display", "inline-block");
+                    $("#FailMessage").text(request.responseText);
+
+                },
+
+                success: function (response) {
+                    console.log(response);
+                    console.log("GetWalletID");
+                    GetSVAs(response.ResponseData.WalletID);
+
+
+
+                    //location.href = "CustomerRegistration.html";
+                }
+            });
+        }
+
+        function GetSVAs(WalletID) {
+            $.ajax({
+                type: "GET",
+                url: "http://192.168.64.10:8123/api/v1/Customers/Wallet/" + WalletID + "/SVA?LicenseKey=LA1214545&IsApplication=0&UserName=" + sessionStorage.getItem('UserID') + "&Password=" + sessionStorage.getItem('Password') + "&SessionID=" + sessionStorage.getItem('SessionID'),
+
+                beforeSend: function (request) {
+
+                    request.setRequestHeader("Authorization", "Bearer 9cd19f21-932f-4b02-b26d-ded9eed66842");
+                    request.setRequestHeader("LicenseKey", "A394F15662BE3095C4D7B51F43EAEC9ACAB6A080");
+                },
+                dataType: 'json',
+                crossDomain: true,
+                contentType: "application/json; charset=utf-8",
+                error: function (request, status, error) {
+
+                    $("#FailMessage").css("display", "inline-block");
+                    $("#FailMessage").text(request.responseText);
+
+                },
+
+                success: function (response) {
+                    console.log("GetSVAs");
+                    console.log(response);
+                    console.log(response.ResponseData["SVA Detail"][0].IsDefault);
+                    console.log(response.ResponseData["SVA Detail"][0].accounts.AccountID);
+                    $.each(response.ResponseData["SVA Detail"], function (index, value) {
+                        if (value.IsDefault == '1') {
+                            sessionStorage.setItem('DefaultSVA', value.accounts.AccountID);
+                            sessionStorage.setItem('DefaultAcctCurrency', value.accounts.AccountCurrency);
+                            sessionStorage.setItem('DefaultAcctType', value.accounts.AccountType);
+                            sessionStorage.setItem('AvailableBalance', value.accounts.AvailableBalance);
+                            var length = sessionStorage.getItem('AvailableBalance').length - 2;
+                            var FormattedAvailableBalance = sessionStorage.getItem('AvailableBalance').substr(0, length) + '.' + sessionStorage.getItem('AvailableBalance').substr(length, 2);
+                            $("#lblAvailableBal").text(FormattedAvailableBalance);
+
+                        }
+                    });
+
+
+
+                    //location.href = "CustomerRegistration.html";
+                }
+            });
+        }
+        $body = $("body");
+
+        $(document).on({
+            ajaxStart: function () { $body.addClass("loading"); },
+            ajaxStop: function () { $body.removeClass("loading"); }
+        });
+    </script>
+    <div class="modal"><!-- Place at bottom of page --></div>
+</body>
+</html>
+
+<style>
+
+    .cert-successful-container-screen{
+   display: block;
+   z-index: 10000;
+   opacity: 0.5;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: #000;
+   filter: alpha(opacity=50);
+   opacity: .5;
+}
+
+.cert-successful-container{
+    position: absolute;
+    display: block;
+    float: left;
+    height: 200px;
+    width: 200px;
+    left: 40%;
+    top: 25%;
+    text-align: center;
+    background-color: #ffffff;
+    border: 2px solid #bec6ca;
+    padding: 10px;
+ 
+     z-index: 10001;
+}
+
+@media all and (max-width: 380px) {
+        .cert-successful-container {
+        left: 18% !important;
+        }
+    }
+
+    @media all and (max-width: 400px) {
+        #CustomerNameDIV .field-label, #CustomerNameDIV .field-value {
+            font-size:8px !important;
+        }
+    }
+
+    @media all and (max-width: 480px) {
+        .cert-successful-container {
+        left: 25%;
+        }
+
+          #CustomerNameDIV .field-label , #CustomerNameDIV .field-value {
+        font-size: 8px;
+        }
+
+    }
+
+    
+    @media all and (max-width: 768px) {
+        #CustomerNameDIV .field-label {
+        margin-left: 5.5px;
+        }
+
+         #CustomerNameDIV .field-label , #CustomerNameDIV .field-value {
+        font-size: 9px;
+        }
+
+    }
+
+#imgQR{
+    width: 100% !important;
+    height: 100% !important;
+}
+
+</style>

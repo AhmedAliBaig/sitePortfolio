@@ -1,0 +1,450 @@
+<html>
+
+<head>
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/layout-functions.js"></script>
+
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700'>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/layout-style.css" />
+    <link rel="stylesheet" href="css/color-style.css" />
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+    <link rel='stylesheet' type='text/css' href="font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" />
+
+</head>
+
+<body>
+	<div class="header-div">
+        <div class="logo-container">
+            <span id="prism-logo"></span>
+        </div>
+        <div class="hamburger-container">
+            <span id="hamburger"></span>
+        </div>
+        <div class="polygon-backdrop">
+            <div class="row" id="search">
+                <div class="col-sm-12">
+                    <input class="form-control" placeholder="Search" type="text" />
+                    <span class="search-icon"></span>
+                </div>
+            </div>
+
+            <div class="user-credentials-container in-header">
+                <div class="img-container">
+
+                </div>
+                <div class="name-container">
+                    <span class="user-name">Jane Smith</span>
+                    <div class="last-axx">
+                        <span class="last-login">Last Access:</span>
+                        <span class="date">16 May, 2016</span>
+                        <span>|</span>
+                        <span class="time">11:45 PM</span>
+                    </div>
+                </div>
+                <span id="logout-now" class="logout" title="Log Out"></span>
+            </div>
+
+
+        <div class="header-controls"></div>
+            </div>
+    </div>
+
+    <div class="main-menu">
+
+
+
+        <ul class="menu-item-container">
+            <li class="module ">
+                <div class="icon"><span class="navItem_Icon item-APIIntegration"></span></div>
+                <a class="name" href="_Layout-PMCL-ApiIntegration.html">Developer's Guide</a>
+            </li>
+            <li class="module selected">
+                <div class="icon"><span class="navItem_Icon item-TestTransaction "></span></div>
+                <a class="name" href="_Layout-PMCL-TestingPortal.html">Test</a>
+            </li>
+
+
+            <li class="module">
+                <div class="icon"><span class="navItem_Icon item-UploadDocuments"></span></div>
+                <a class="name" href="_Layout-PMCL-UploadDocument.html">Upload Documents</a>
+            </li>
+
+            <li class="module">
+                <div class="icon"><span class="navItem_Icon item-Tariff"></span></div>
+                <a class="name" href="_Layout-PMCL-Tarriffs.html">Tariff</a>
+            </li>
+            <li class="module">
+                <div class="icon"><span class="navItem_Icon item-FAQ"></span></div>
+                <a class="name" href="_Layout-PMCL-FAQs.html">FAQs</a>
+            </li>
+            <li class="module">
+                <div class="icon"><span class="navItem_Icon item-MERCH"></span></div>
+                <a class="name" href="_Layout-PMCL-MerchantPortal.html">Merchant Portal</a>
+            </li>
+        </ul>
+
+    </div>
+    
+
+    <div class="content-area">
+        <div class="card-layout">
+
+
+            <div class="mainHeading">
+Transaction History           
+             </div>
+         
+            <div class="container-content">
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="panel panel-white">
+
+                            <div class="panel-body">
+                                <div class="form-horizontal">
+
+
+
+                                    <style>
+
+                                        .xybox{
+                                          position: absolute;
+                                          left: 220px;
+                                          bottom: 80px;
+                                        }
+
+                                        .panel-heading , .panel-body{
+                                            padding: 0px;
+                                        }
+
+                                        #form1 table tbody tr td div{
+                                            overflow-y: hidden !important;
+                                        }
+
+                                        .margined-body{
+                                            overflow: hidden !important;
+                                            margin-top: 25px;
+                                        }
+
+                                       .container-content .form-control{
+                                            width: 85% !important;
+                                        }
+
+                                        label{
+                                            font-size: 12px !important;
+                                        }
+                                                                                #btn_Go {
+                                                                                    margin-top: 0px;
+                                                                                    float: none;
+                                                                                    padding: 5px;
+                                                                                    margin-left: 5px;
+                                                                                    font-size: 12px;
+                                                                                }
+
+                                                                                table .table-bordered {
+                                                                                    margin-bottom: 0px !important;
+                                                                                }
+
+                                                                                .btnBar {
+                                                                                    position: absolute;
+                                                                                    right: 22px;
+                                                                                    bottom: 60px;
+                                                                                }
+
+                                                                                #btn_Go2 {
+                                                                                    margin-top: 0px;
+                                                                                    float: none;
+                                                                                    padding: 5px;
+                                                                                    margin-left: 5px;
+                                                                                    font-size: 12px;
+                                                                                }
+
+                                                                                table .table-bordered {
+                                                                                    margin-bottom: 0px !important;
+                                                                                }
+
+                                                                                .btnBar {
+                                                                                    position: absolute;
+                                                                                    right: 22px;
+                                                                                    bottom: 60px;
+                                                                                }
+                                                                                /*#table1  table thead tr{
+                                            display:block;
+                                        }
+
+                                        #table1 table th,table td{
+                                            width:125px;
+                                        }
+
+
+                                        #table1 table  tbody{
+                                          display:block;
+                                          height:200px;
+                                          overflow:auto;
+                                        }*/
+                                    </style>
+
+                                    
+                                    <form action="/BackOfficePay/Transaction/History" autocomplete="off" id="form1" method="post">
+                                        <input name="__RequestVerificationToken" type="hidden" value="gnDMlKuCEY0AkXXELRuQZY_QvxJuIXOsM640yWdnrHYJmj60Lsu0n2xpGsRGu-2HSspNpNOlksYPgdayliKbWFvvdFw1">
+
+                                        <table width="920" border="0" align="center" cellpadding="0" cellspacing="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div id="DivError">
+
+
+                                                        </div>
+                                                        <div id="errortd" style="display: none; color: #ff0000">
+                                                            <div id="errorMessage">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="20" class="border">
+                                                        <div class="panel-heading">
+                                                            <div class="mainHeading sub">
+                                                                Search Option
+                                                            </div>
+                                                        </div>
+                                                
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border">
+
+
+                                                        <style>
+                                                            table {
+                                                                width: 100%;
+                                                            }
+
+                                                            .btnBar {
+                                                                position: absolute;
+                                                                right: 22px;
+                                                                bottom: 60px;
+                                                            }
+                                                        </style>
+
+                                                        <script type="text/javascript">
+
+   
+                                                        </script>
+                                                        
+                                                        <input type="hidden" id="DTFormat" value="dd M yy">
+
+                                                        <input type="hidden" id="MinDate" value="-180d">
+                                                        <input type="hidden" id="MaxDate" value="180">
+                                                        <div class="margined-body">
+
+
+
+                                                            <div class="form-group">
+                                                                <label class="col-sm-2 control-label">Status</label>
+                                                                <div class="col-sm-4">
+                                                                    <select class="form-control" id="ddl_Status" name="ddl_Status">
+                                                                        <option value="All">All</option>
+                                                                        <option value="1111">Expired</option>
+                                                                        <option value="----">Pending</option>
+                                                                        <option value="9999">Failed</option>
+                                                                        <option value="0000">Success</option>
+                                                                        <option value="8888">Awaiting Reversal</option>
+                                                                        <option value="7777">Reversed</option>
+                                                                        <option value="xxxx">Completed</option>
+                                                                        <option value="3333">Awaiting Confirmation</option>
+                                                                        <option value="CD00">Disputed</option>
+                                                                        <option value="CB00">Awaiting Action</option>
+                                                                        <option value="5555">Awaiting Void</option>
+                                                                        <option value="6666">Void</option>
+                                                                        <option value="TMDO">Timed Out</option>
+                                                                        <option value="DEL0">Delivered</option>
+                                                                        <option value="4444">System Reversed</option>
+                                                                    </select>
+                                                                </div>
+                                                                <label class="col-sm-2 control-label">Transaction Reference No</label>
+                                                                <div class="col-sm-4">
+                                                                    <input class="form-control" name="tbTxnRefNo" id="tbTxnRef" type="text" size="20" maxlength="20" value="" onselectstart="return false" ondragstart="return false" onkeypress="return(KeyPressTxnRefNum(this, event))" onkeydown="(KeyPressTxnRefNum(this, event))">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+
+                                                                <label class="col-sm-2 control-label">Retrieval Reference No</label>
+                                                                <div class="col-sm-4">
+                                                                    <input class="form-control" name="tbRRN" id="tbRRN" type="text" size="30" maxlength="12" value="" onselectstart="return false" ondragstart="return false" onkeypress="return(KeyPressNumber(this, event))" onkeydown="(KeyPressNumber(this, event))">
+                                                                </div>
+                                                                <label class="col-sm-2 control-label">Auth Code</label>
+                                                                <div class="col-sm-4">
+                                                                    <input class="form-control" name="tbAuthCode" id="tbAuthCode" type="text" size="30" maxlength="20" value="" onselectstart="return false" ondragstart="return false" onkeypress="return(KeyPressNumber(this, event))" onkeydown="(KeyPressNumber(this, event))">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label class="col-sm-2 control-label">From Date</label>
+                                                                <div class="col-sm-4">
+                                                                    <input class="form-control hasDatepicker" type="text" id="from" name="from" readonly="readonly" value="28 Jul 2016" style="cursor: default; background-color: transparent;">
+                                                                </div>
+                                                                <label class="col-sm-2 control-label">To Date</label>
+                                                                <div class="col-sm-4">
+                                                                    <input class="form-control hasDatepicker" type="text" id="to" name="to" readonly="readonly" value="24 Jan 2017" style="cursor: default; background-color: transparent;">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="30" align="right" class="save-button-right">
+                                                        <input name="btn_Search" type="submit" class="btn btn-primary" style="margin-right: 0px" value="Search" onclick="return validateform()">
+                                                        <input name="btn_Back" type="submit" class="btn btn-default" value="Back" style="margin-right: 50px">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+
+
+
+                                                <tr>
+                                                    <td>
+                                                        <div>
+                                                            <div class="table-responsive" id="table3" data-item-original-width="1030" style="width: 1030px;">
+                                                                <table class="table table-bordered"><thead><tr><th width="4%" class="sort_asc"><a href="/BackOfficePay/Transaction/History?Direction=Descending"></a></th><th width="13.55%" class="gridlinkcolor"><a href="/BackOfficePay/Transaction/History?Column=Retrieval%20Reference%20Number&amp;Direction=Ascending">Retrieval Reference Number</a></th><th width="19.8%" class="gridlinkcolor"><a href="/BackOfficePay/Transaction/History?Column=TransactionReference&amp;Direction=Ascending">Transaction Reference Number</a></th><th width="11%" class="gridlinkcolor"><a href="/BackOfficePay/Transaction/History?Column=AuthCode&amp;Direction=Ascending">Auth Code</a></th><th width="12.7%" class="gridlinkcolor"><a href="/BackOfficePay/Transaction/History?Column=Transaction%20Amount&amp;Direction=Ascending">Transaction Amount</a></th><th width="16.9%" class="gridlinkcolor"><a href="/BackOfficePay/Transaction/History?Column=TransactionDateTime&amp;Direction=Ascending">Transaction Date Time</a></th><th width="13%" class="gridlinkcolor"><a href="/BackOfficePay/Transaction/History?Column=Name&amp;Direction=Ascending">Transaction Type</a></th><th width="50" class="gridlinkcolor"><a href="/BackOfficePay/Transaction/History?Column=StatusName&amp;Direction=Ascending">Status</a></th></tr></thead><tbody></tbody></table>
+                                                            </div>
+                                                        </div>
+                                                        <div style="height: 260px; overflow: auto;">
+                                                            <div class="table-responsive" id="table3" data-item-original-width="1030" style="width: 1030px;">
+                                                                <table class="table table-bordered"><thead></thead><tbody><tr class="gridrow"><td class="textlightbluebg2" data-item-original-width="23" style="width: 41px;"><input type="radio" name="Radio_Select" value="n9/QjHyrMSywzlitnGLY1A=="></td><td class="textlightbluebg2" data-item-original-width="121" style="width: 139px;"><a href="#" onclick="ViewHistory('EPeYzbZX1/R5OMxeQGw6GQ==');"> 170123003824 </a></td><td class="textlightbluebg2" data-item-original-width="185" style="width: 203px;">T20170123152030</td><td class="textlightbluebg2" data-item-original-width="95" style="width: 113px;"></td><td class="textlightbluebg2" data-item-original-width="112" style="width: 130px;">PKR 100.00</td><td class="textlightbluebg2" data-item-original-width="155" style="width: 173px;">1/23/2017 3:20:30 PM</td><td class="textlightbluebg2" data-item-original-width="115" style="width: 133px;">Card Payment</td><td class="textlightbluebg2" data-item-original-width="79" style="width: 97px;">Failed</td></tr><tr class="gridrow_alternate"><td class="textlightbluebg2"><input type="radio" name="Radio_Select" value="TlnSQy0ExVR/t4B+UQ1Qpg=="></td><td class="textlightbluebg2"><a href="#" onclick="ViewHistory('mfL4YkVvAegDmwIIDCRPkQ==');"> 170117003786 </a></td><td class="textlightbluebg2">T20170117172144</td><td class="textlightbluebg2"></td><td class="textlightbluebg2">PKR 100.00</td><td class="textlightbluebg2">1/17/2017 5:21:44 PM</td><td class="textlightbluebg2">Mobile Account</td><td class="textlightbluebg2">Failed</td></tr><tr class="gridrow"><td class="textlightbluebg2"><input type="radio" name="Radio_Select" value="S24pV3Im9t0I09qOrtv2Ow=="></td><td class="textlightbluebg2"><a href="#" onclick="ViewHistory('46tCr7wAh8mPnqBs7N4UhA==');"> 170117003785 </a></td><td class="textlightbluebg2">T20170117171616</td><td class="textlightbluebg2">000000000000</td><td class="textlightbluebg2">PKR 100.00</td><td class="textlightbluebg2">1/17/2017 5:16:16 PM</td><td class="textlightbluebg2">Voucher Payment</td><td class="textlightbluebg2">Completed</td></tr><tr class="gridrow_alternate"><td class="textlightbluebg2"><input type="radio" name="Radio_Select" value="dDPcmG/YGHwbXsDZAA3UXA=="></td><td class="textlightbluebg2"><a href="#" onclick="ViewHistory('ybSj4RjUhk43b+ZRI/ES/g==');"> 170117003784 </a></td><td class="textlightbluebg2">T20170117171157</td><td class="textlightbluebg2"></td><td class="textlightbluebg2">PKR 100.00</td><td class="textlightbluebg2">1/17/2017 5:11:57 PM</td><td class="textlightbluebg2">Voucher Payment</td><td class="textlightbluebg2">Completed</td></tr><tr class="gridrow"><td class="textlightbluebg2"><input type="radio" name="Radio_Select" value="rbhhqZQSai8Vz0ct5QphHQ=="></td><td class="textlightbluebg2"><a href="#" onclick="ViewHistory('sdT3LZ68pXXaK2o+JANrbw==');"> 170117003781 </a></td><td class="textlightbluebg2">T20170117165054</td><td class="textlightbluebg2"></td><td class="textlightbluebg2">PKR 100.00</td><td class="textlightbluebg2">1/17/2017 4:50:54 PM</td><td class="textlightbluebg2">Voucher Payment</td><td class="textlightbluebg2">Pending</td></tr><tr class="gridrow_alternate"><td class="textlightbluebg2"><input type="radio" name="Radio_Select" value="1E4IF2lJZP2UNI5pOhv4QQ=="></td><td class="textlightbluebg2"><a href="#" onclick="ViewHistory('+OTk4DuTDKpPd3PrAhUiNg==');"> 170117003779 </a></td><td class="textlightbluebg2">T20170117164128</td><td class="textlightbluebg2"></td><td class="textlightbluebg2">PKR 100.00</td><td class="textlightbluebg2">1/17/2017 4:41:28 PM</td><td class="textlightbluebg2">Voucher Payment</td><td class="textlightbluebg2">Pending</td></tr></tbody></table>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="pagination"><span class="paginationLeft xy">Showing 1 - 6 of 6 </span></div>
+
+                                                        <div class="xybox">
+                                                        <span class="xy">Page</span>
+                                                        <input class="xy" name="tbPageNum" value="1" id="Text1" type="text" size="2" maxlength="2" onselectstart="return false" ondragstart="return false" onkeypress="return(PageKeyPress(this, event))" onkeydown="(PageKeyPress(this, event))">
+                                                        <span class="xy">1</span>
+
+                                                        <input class="xy" value="1" id="Hidden1" type="hidden">
+                                                        <input  name="btn_Go" id="btn_Go2 xy" class="btn btn-primary xy" type="submit" value="Go" onclick="return ValidatePageNo()">
+                                                    </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <input style="margin-right:5px" type="submit" class="btn btn-primary pull-right" name="btn_Delivered" id="DELIVERED" value="Delivered">
+                                                        <input style="margin-right:5px" type="submit" class="btn btn-primary pull-right" name="btn_Refund" id="REFUND" value="Refund">
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </form>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+
+                
+
+            </div>
+
+          
+
+
+           
+
+        </div>
+    </div>
+</body>
+
+
+</html>
+<style type="text/css">
+
+    .main-menu{
+
+    }
+
+
+
+
+    .collapse {
+        transition: 1s;
+    }
+</style>
+
+<script>
+
+    $(window).resize(function () {
+        setMainMenuHeight();
+    });
+
+    function setMainMenuHeight() {
+        var x = $(".content-area").height();
+
+        var y = $(window).height() - 55;
+
+        $(".main-menu").css("height", y);
+    }
+
+
+
+    $(document).ready(function () {
+        setMainMenuHeight();
+    });
+
+    $("#prism-logo").on("click", function () {
+        location.href = "_Layout-PMCL-GettingStarted.html";
+    });
+
+    $("#logout-now").on("click", function () {
+        location.href = "_Layout-PMCL-Index.html";
+    });
+
+    $(".hamburger-container").on("click", function () {
+
+
+        if ($(".main-menu").hasClass("collapse")) {
+
+
+            setTimeout(function () {
+                $(".main-menu").removeClass("collapse");
+            }, 200);
+
+            $(".content-area").removeClass("expanded");
+
+
+
+        }
+
+        else {
+
+            setTimeout(function () {
+                $(".content-area").addClass("expanded");
+            }, 200);
+
+            $(".main-menu").addClass("collapse");
+
+
+        }
+    });
+
+    //$('#hamburger').click(function () {
+        //$('.main-menu').fadeOut(1000);
+    //})
+</script>

@@ -1,0 +1,288 @@
+<html>
+
+<head>
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/layout-functions.js"></script>
+
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700'>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/layout-style.css" />
+    <link rel="stylesheet" href="css/color-style.css" />
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+    <link rel='stylesheet' type='text/css' href="font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" />
+
+</head>
+
+<body>
+	<div class="header-div">
+        <div class="logo-container">
+            <span id="prism-logo"></span>
+        </div>
+        <div class="hamburger-container">
+            <span id="hamburger"></span>
+        </div>
+        <div class="polygon-backdrop">
+            <div class="row" id="search">
+                <div class="col-sm-12">
+                    <input class="form-control" placeholder="Search" type="text" />
+                    <span class="search-icon"></span>
+                </div>
+            </div>
+
+            <div class="user-credentials-container in-header">
+                <div class="img-container">
+
+                </div>
+                <div class="name-container">
+                    <span class="user-name">Ahmed Saleem</span>
+                    <div class="last-axx">
+                        <span class="last-login">Last Access:</span>
+                        <span class="date">16 May, 2016</span>
+                        <span>|</span>
+                        <span class="time">11:45 PM</span>
+                    </div>
+                </div>
+                <span id="logout-now" class="logout" title="Log Out"></span>           
+             </div>
+
+
+        <div class="header-controls"></div>
+            </div>
+    </div>
+
+    <div class="main-menu">
+
+
+
+        <ul class="menu-item-container">
+            <li class="module ">
+                <div class="icon"><span class="navItem_Icon item-APIIntegration"></span></div>
+                <a class="name" href="_Layout-PMCL-ApiIntegration.html">Developer's Guide</a>
+            </li>
+            <li class="module selected" >
+                <div class="icon"><span class="navItem_Icon item-TestTransaction "></span></div>
+                <a class="name" href="_Layout-PMCL-TestTransaction.html">Test</a>
+            </li>
+      
+
+            <li class="module">
+                <div class="icon"><span class="navItem_Icon item-UploadDocuments"></span></div>
+                <a class="name" href="_Layout-PMCL-UploadDocument.html">Upload Documents</a>
+            </li>
+
+            <li class="module">
+                <div class="icon"><span class="navItem_Icon item-Tariff"></span></div>
+                <a class="name" href="_Layout-PMCL-Tarriffs.html">Tariff</a>
+            </li>
+            <li class="module">
+                <div class="icon"><span class="navItem_Icon item-FAQ"></span></div>
+                <a class="name" href="_Layout-PMCL-FAQs.html">FAQs</a>
+            </li>
+            <li class="module">
+                <div class="icon"><span class="navItem_Icon item-MERCH"></span></div>
+                <a class="name" href="_Layout-PMCL-MerchantPortal.html">Merchant Portal</a>
+            </li>
+        </ul>
+
+    </div>
+    
+
+    <div class="content-area">
+        <div class="card-layout">
+
+            <div class="step-guide">
+                <span class="number" onclick="gotToStep1()" >Step <span class="numbered">1</span></span>
+                <hr />
+                <span class="number active">Step <span class="numbered">2</span></span>
+                <hr />
+                <span class="number">Step <span class="numbered">3</span></span>
+            </div>
+
+         
+            <div class="container-content">
+
+                <div class="cover-image testingMerchAndInst">
+
+                    <div class="content-box">
+                    <span class="fa fa-wrench"></span>
+                        <div class="headings">
+                    <h1>Transaction and Instrument Testing</h1>
+                    <h2>Select the platform you intend to test</h2>
+                        </div>
+                        </div>
+                </div>
+                
+                <div class="test-portal-container">
+
+                    <div class="one-third-container">
+                        <div class="row-fluid">
+                            <div class="test-icon test-wallet"></div>
+                         
+                                    <h4>
+                                        Wallet API
+                                    </h4>
+
+                            <button class="btn btn-primary" onclick="gotToStep3()">Test Now</button>
+                            
+                        </div>
+
+                        
+                        <hr />
+                    </div>
+
+              
+
+                    <div class="one-third-container">
+                        <div class="row-fluid">
+                            <div class="test-icon test-voucher"></div>
+                        
+                                    <h4>
+                                        Voucher
+                                    </h4>
+
+                            <button class="btn btn-primary">Test Now</button>
+
+
+                       
+                               
+                        </div>
+
+                        <hr />
+                    </div>
+
+                    <div class="one-third-container">
+                        <div class="row-fluid">
+                            <div class="test-icon test-status"></div>
+
+                            <h4>
+                                Status Inquiry
+                            </h4>
+
+                            <button class="btn btn-primary" onclick="gotToStep2()">Test Now</button>
+
+
+                        
+
+                        </div>
+
+                        <hr />
+                    </div>
+
+                </div>
+
+             
+
+            </div>
+
+          
+
+
+           
+
+        </div>
+    </div>
+</body>
+
+
+</html>
+<style type="text/css">
+
+    .fa-angle-right{
+        height: 15px;
+        width: 15px;
+        color: white;
+        position: absolute;
+
+          right: 35px;
+    top: 8px;
+    font-size: 20px;
+    }
+
+
+
+    .collapse {
+        transition: 1s;
+    }
+
+    .test-portal-container{
+        margin-left: 7%;
+    }
+</style>
+
+<script>
+
+    function gotToStep1() {
+        location.href = "_Layout-PMCL-TestingPortal.html";
+    }
+
+    function gotToStep2() {
+        location.href = "_Layout-PMCL-TestingPortal-CodeTest.html";
+    }
+
+    function gotToStep3() {
+        location.href = "_Layout-PMCL-TestingPortal-WalletAPI.html";
+    }
+
+    $(window).resize(function () {
+        setMainMenuHeight();
+    });
+
+    function setMainMenuHeight() {
+        var x = $(".content-area").height();
+
+        var y = $(window).height() - 55;
+
+        $(".main-menu").css("height", y);
+    }
+
+    $(document).ready(function () {
+      
+        setMainMenuHeight();
+
+        var y = $(".left-half-container").height();
+        $(".right-half-container").css("height", y);
+    });
+
+    $("#prism-logo").on("click", function () {
+        location.href = "_Layout-PMCL-GettingStarted.html";
+    });
+
+    $("#logout-now").on("click", function () {
+        location.href = "_Layout-PMCL-Index.html";
+    });
+
+    $(".hamburger-container").on("click", function () {
+
+
+        if ($(".main-menu").hasClass("collapse")) {
+
+           
+            setTimeout(function () {
+                $(".main-menu").removeClass("collapse");
+            }, 200);
+
+            $(".content-area").removeClass("expanded");
+
+
+        
+        }
+
+        else {
+
+            setTimeout(function () {
+                $(".content-area").addClass("expanded");
+            }, 200);
+
+            $(".main-menu").addClass("collapse");
+
+ 
+        }
+    });
+
+    //$('#hamburger').click(function () {
+        //$('.main-menu').fadeOut(1000);
+    //})
+</script>

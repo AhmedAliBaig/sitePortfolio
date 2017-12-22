@@ -1,0 +1,92 @@
+<html>
+
+<head>
+
+	<link href="styles/kendo.common.min.css" rel="stylesheet">
+	<link href="styles/kendo.rtl.min.css" rel="stylesheet">
+	<link href="styles/kendo.default.min.css" rel="stylesheet">
+	<link href="styles/kendo.dataviz.min.css" rel="stylesheet">
+	<link href="styles/kendo.dataviz.default.min.css" rel="stylesheet">
+
+	<script src="js/angular.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/kendo.all.min.js"></script>
+
+	<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700'>
+	<link rel="stylesheet" href="bootstrap.min.css" />
+	<!--<link rel="stylesheet" href="styleframe.css" />-->
+    <link rel="stylesheet" href="layout-style.css" />
+    <link rel="stylesheet" href="color-style.css" />
+    <link rel="stylesheet" href="styles/font-awesome.min.css" />
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+	
+</body>
+
+
+</html>
+<style type="text/css">
+
+    body {
+        background: url(images/PayAxisMonitring.jpg) no-repeat center center;
+        background-size: contain;
+    }
+
+
+
+    .collapse {
+        transition: 1s;
+    }
+</style>
+
+<script>
+
+    $(document).ready(function () {
+        var x = $(".content-area").height()
+        $(".main-menu").css("height", x);
+    });
+
+     $("#prism-logo").on("click", function () {
+        location.href = "_Layout-PMCL-GettingStarted.html";
+     });
+
+     $("#logout-now").on("click", function () {
+         location.href = "_Layout-PMCL-Login.html";
+     });
+
+
+    $(".hamburger-container").on("click", function () {
+
+
+        if ($(".main-menu").hasClass("collapse")) {
+
+           
+            setTimeout(function () {
+                $(".main-menu").removeClass("collapse");
+            }, 200);
+
+            $(".content-area").removeClass("expanded");
+
+
+        
+        }
+
+        else {
+
+            setTimeout(function () {
+                $(".content-area").addClass("expanded");
+            }, 200);
+
+            $(".main-menu").addClass("collapse");
+
+ 
+        }
+    });
+
+    //$('#hamburger').click(function () {
+        //$('.main-menu').fadeOut(1000);
+    //})
+</script>

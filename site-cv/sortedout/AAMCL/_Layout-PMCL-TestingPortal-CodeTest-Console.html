@@ -1,0 +1,564 @@
+<html>
+
+<head>
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/layout-functions.js"></script>
+
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700'>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/layout-style.css" />
+    <link rel="stylesheet" href="css/color-style.css" />
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+    <link rel='stylesheet' type='text/css' href="font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" />
+
+</head>
+
+<body>
+	<div class="header-div">
+        <div class="logo-container">
+            <span id="prism-logo"></span>
+        </div>
+        <div class="hamburger-container">
+            <span id="hamburger"></span>
+        </div>
+        <div class="polygon-backdrop">
+            <div class="row" id="search">
+                <div class="col-sm-12">
+                    <input class="form-control" placeholder="Search" type="text" />
+                    <span class="search-icon"></span>
+                </div>
+            </div>
+
+            <div class="user-credentials-container in-header">
+                <div class="img-container">
+
+                </div>
+                <div class="name-container">
+                    <span class="user-name">Ahmed Saleem</span>
+                    <div class="last-axx">
+                        <span class="last-login">Last Access:</span>
+                        <span class="date">16 May, 2016</span>
+                        <span>|</span>
+                        <span class="time">11:45 PM</span>
+                    </div>
+                </div>
+                <span id="logout-now" class="logout" title="Log Out"></span>           
+             </div>
+
+
+        <div class="header-controls"></div>
+            </div>
+    </div>
+
+    <div class="main-menu">
+
+
+
+        <ul class="menu-item-container">
+            <li class="module ">
+                <div class="icon"><span class="navItem_Icon item-APIIntegration"></span></div>
+                <a class="name" href="_Layout-PMCL-ApiIntegration.html">Developer's Guide</a>
+            </li>
+            <li class="module selected" >
+                <div class="icon"><span class="navItem_Icon item-TestTransaction "></span></div>
+                <a class="name" href="_Layout-PMCL-TestingPortal.html">Test</a>
+            </li>
+      
+
+            <li class="module">
+                <div class="icon"><span class="navItem_Icon item-UploadDocuments"></span></div>
+                <a class="name" href="_Layout-PMCL-UploadDocument.html">Upload Documents</a>
+            </li>
+
+            <li class="module">
+                <div class="icon"><span class="navItem_Icon item-Tariff"></span></div>
+                <a class="name" href="_Layout-PMCL-Tarriffs.html">Tariff</a>
+            </li>
+            <li class="module">
+                <div class="icon"><span class="navItem_Icon item-FAQ"></span></div>
+                <a class="name" href="_Layout-PMCL-FAQs.html">FAQs</a>
+            </li>
+            <li class="module">
+                <div class="icon"><span class="navItem_Icon item-MERCH"></span></div>
+                <a class="name" href="_Layout-PMCL-MerchantPortal.html">Merchant Portal</a>
+            </li>
+        </ul>
+
+    </div>
+    
+
+    <div class="content-area">
+        <div class="card-layout">
+
+            <div class="step-guide">
+                <span class="number" onclick="gotToStep1()">
+                    <span class="head">
+                        Step <span class="numbered">1</span>
+                    </span>
+                    <br />
+                    <span class="body-desc">Transaction &#38; Instrument</span>
+                </span>
+                <hr />
+                <span class="number" onclick="gotToStep2()">
+                    <span class="head">
+                        Step <span class="numbered">2</span>
+                    </span>
+
+                    <span class="body-desc">Api Testing</span>
+                </span>
+                <hr />
+                <span class="number">
+                    <span class="head">
+                        Step <span class="numbered">3</span>
+                    </span>
+
+                    <span class="body-desc">Mode: Wallet Api</span>
+                </span>
+            </div>
+
+         
+            <div class="container-content with-steps">
+
+                <div class="cover-image generic consoleDiv">
+
+                    <div class="content-box">
+                        <span class="fa fa-clone"></span>
+                     
+                            <div class="headings">
+
+                                <h1>Transaction Response</h1>
+                                <h2>Use the environments’s access secrets as the HTTP basic password.</h2>
+                            </div>
+                           
+                </div>
+
+
+            </div>
+
+                <div class="mainHeading"><span style="float:left">Awaiting Response</span> <span class="loader" style="margin-left:10px ; top: -4px;"></span> 
+                <span class="fa fa-file-code-o" title="View the comparison of the code recieved and of the code expected" onclick="viewReason()"></span>
+                    <span class="fa fa-television" title="View the Transaction history on Payaxis portal" onclick="viewTransHistory()"></span>
+
+                </div>
+
+                <div class="container-content">
+
+                    <div class="terminal-container left-half-container">
+
+
+
+<pre class="highlight json" style="display: block;">
+                        <span class="passed">HTTP 1.1 302 Found</span>
+                        <span class="passed">Date: Wed, 21 Sep 2011 11:37:22 GMT</span>
+                        <span class="passed">Server: APache 1.3.41 (Unix) PHP/5.2.17</span>
+                        <span class="passed">X-Powered by: PHP/5.2.17</span>
+                        <span class="passed">Content Language: en</span>
+                        <span class="failed">X-PHP Load: 4.124124142 , 3.41241241421 , 4.12434633</span>
+                        <span class="failed">Location: http://us.php.net/search.php?show=quickref& </span>
+                        <span class="passed">Connection: close</span>
+                        <span class="passed">Transfer-encoding: chunked</span>
+                        <span class="passed">text/html; charset=utf-8</span>
+                        <span class="passed">x-served-by: l73c004, l73c015</span>
+                        <span class="passed">x-correlation-id: 1487656463_485_77_l73c004_VDP_ARM, 1487656463_485_77_l73c004_VDP_ARM</span>
+                        <span class="passed">x-backside-transport: OK OK,OK OK</span>
+                        <span class="passed">x-app-status: 200</span>
+                        <span class="passed">x-global-transaction-id: 654701485</span>
+                        <span class="passed">x-frame-options: SAMEORIGIN</span>
+                        <span class="failed">x-xss-protection: 1; mode=block</span>
+                        <span class="passed">x-content-type-options: nosniff</span>
+                        <span class="passed">strict-transport-security: max-age=2592000;includeSubdomains</span>
+                        <span class="passed">cache-control: no-cache, no-store, must-revalidate</span>
+                        <span class="pending">pragma: no-cache</span>
+                        <span class="pending">expires: Thu, 01 Jan 1970 00:00:00 GMT</span>
+                        <span class="pending">content-security-policy-report-only: default-src 'self' https://*.v.me https://*.visa.com;script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.visa.com https://*.v.me;img-src 'self' https://*.v.me https://*.visa.com https://*.unica.com https://ad.doubleclick.net;style-src 'self' 'unsafe-inline' https://*.visa.com;object-src https://*.v.me https://*.visa.com data:;report-uri /logging/logCSPReport;</span>
+                        <span class="pending">x-content-security-policy-report-only: default-src 'self' https://*.v.me https://*.visa.com;script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.visa.com https://*.v.me;img-src 'self' https://*.v.me https://*.visa.com https://*.unica.com https://ad.doubleclick.net;style-src 'self' 'unsafe-inline' https://*.visa.com;object-src https://*.v.me https://*.visa.com data:;report-uri /logging/logCSPReport;</span>
+                        <span class="pending">x-webkit-csp-report-only: default-src 'self' https://*.v.me https://*.visa.com;script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.visa.com https://*.v.me;img-src 'self' https://*.v.me https://*.visa.com https://*.unica.com https://ad.doubleclick.net;style-src 'self' 'unsafe-inline' https://*.visa.com;object-src https://*.v.me https://*.visa.com data:;report-uri /logging/logCSPReport;</span>
+                        <span class="pending">content-type: application/json;charset=UTF-8</span>
+                        <span class="pending">content-language: en-US</span>
+                        <span class="pending">content-length: 71</span>
+                        <span class="pending">date: Tue, 21 Feb 2017 05:54:23 GMT</span>
+                        <span class="pending">connection: keep-alive</span>
+</pre>
+
+
+
+
+
+
+
+
+                    </div>
+
+                    <div class="right-half-container console-test">
+
+                        <div class="panel panel-default panel-adj" style="border:0px ; border-top: 1px solid #ffffff;">
+                            <div class="panel-heading panel-adj panel-terminal">
+                                <h4>
+                                    <span style="float:left">Result</span><span style="margin-left: 10px;" class="loader-ellipsis-white"></span>
+                                </h4>
+                            </div>
+                        </div>
+
+                        <div class="table-container">
+                            <table id="TransactionList" class="table table-hover table-fixedheader table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>RRN</th>
+                                        <th width="135px">Transaction Type</th>
+                                        <th>Description</th>
+                                        <th>Success</th>
+
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>3233</td>
+                                        <td>Merchant Integration</td>
+                                        <td>proper bill reference</td>
+
+                                        <td> <span class="grid-success"></span> </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>3233</td>
+                                        <td>Merchant Integration</td>
+                                        <td> proper description</td>
+
+                                        <td> <span class="grid-success"></span> </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>3233</td>
+                                        <td>Merchant Integration</td>
+                                        <td>proper return url</td>
+                                        <td> <span class="grid-success"></span> </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>3233</td>
+                                        <td>Merchant Integration</td>
+                                        <td>proper secret hash pertaining to merchant</td>
+                                        <td> <span class="grid-success"></span> </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td>3233</td>
+                                        <td>Merchant Integration</td>
+                                        <td>wrong secret hash</td>
+                                        <td> <span class="grid-fail"></span> </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td>3233</td>
+                                        <td>Merchant Integration</td>
+                                        <td>When amount is sent as 0.0</td>
+                                        <td> <span class="grid-fail"></span> </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td>3233</td>
+                                        <td>Merchant Integration</td>
+                                        <td>When amount is greater than capability</td>
+                                        <td> <span class="grid-success"></span> </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td>3233</td>
+                                        <td>Merchant Integration</td>
+                                        <td>if merchant parameter does not support transaction type</td>
+                                        <td> <span class="grid-success"></span> </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>3233</td>
+                                        <td>Merchant Integration</td>
+                                        <td>Invalid Merchant ID (Does not exist at PG)</td>
+                                        <td> <span class="grid-success"></span> </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>3233</td>
+                                        <td>Merchant Integration</td>
+                                        <td>Language 'EN'</td>
+                                        <td> <span class="grid-success"></span> </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>3233</td>
+                                        <td>Merchant Integration</td>
+                                        <td>with submerchant ID</td>
+                                        <td> <span class="grid-success"></span> </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>3233</td>
+                                        <td>Merchant Integration</td>
+                                        <td>Correct password</td>
+                                        <td> <span class="grid-success"></span> </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>3233</td>
+                                        <td>Merchant Integration</td>
+                                        <td>Password that does not exist as PG</td>
+                                        <td> <span class="grid-success"></span> </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>3233</td>
+                                        <td>Merchant Integration</td>
+                                        <td>Correct bank ID</td>
+                                        <td> <span class="grid-success"></span> </td>
+                                    </tr>
+
+
+
+
+
+
+
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                    </div>
+                </div>
+
+          
+
+
+           
+
+        </div>
+    </div>
+
+    <div class="cert-successful-container-screen hide"></div>
+    <div id="ViewCorrectionCode" class="cert-successful-container hide">
+      
+       
+        <div class="container-content">
+        <div class="left-half-container">
+            <div class="mainHeading">
+                Code Recieved
+            </div>
+            <div class="terminal-container">
+
+                <pre class="highlight json" style="display: block;">
+                <span class="passed">HTTP 1.1 302 Found</span>
+                <span class="passed">Date: Wed, 21 Sep 2011 11:37:22 GMT</span>
+                <span class="passed">Server: APache 1.3.41 (Unix) PHP/5.2.17</span>
+                <span class="passed">X-Powered by: PHP/5.2.17</span>
+                <span class="passed">Content Language: en</span>
+                <span class="failed">X-PHP Load: 4.124124142 , 3.41241241421 , 4.12434633</span>
+                <span class="failed">Location: http://us.php.net/search.php?show=quickref& </span>            
+                <span class="pending">expires: Thu, 01 Jan 1970 00:00:00 GMT</span>
+                <span class="pending">content-type: application/json;charset=UTF-8</span>
+                <span class="pending">content-language: en-US</span>
+                <span class="pending">content-length: 71</span>
+                <span class="pending">date: Tue, 21 Feb 2017 05:54:23 GMT</span>
+                <span class="pending">connection: keep-alive</span>
+</pre>
+
+            </div>    
+        </div>
+
+        <div class="right-half-container">
+            <div class="mainHeading">
+                Expected Code
+            </div>
+            <div class="terminal-container terminal-white">
+
+                <pre class="highlight json" style="display: block;">
+                <span class="passed">HTTP 1.1 302 Found</span>
+                <span class="passed">Date: Wed, 21 Sep 2011 11:37:22 GMT</span>
+                <span class="passed">Server: APache 1.3.41 (Unix) PHP/5.2.17</span>
+                <span class="passed">X-Powered by: PHP/5.2.17</span>
+                <span class="passed">Content Language: en</span>
+                <span class="failed">X-PHP Load: 4.124124142 , 3.41241241421 , 4.12434633</span>
+                <span class="failed">Location: http://us.php.net/search.php?show=quickref& </span>            
+                <span class="pending">expires: Thu, 01 Jan 1970 00:00:00 GMT</span>
+                <span class="pending">content-type: application/json;charset=UTF-8</span>
+                <span class="pending">content-language: en-US</span>
+                <span class="pending">content-length: 71</span>
+                <span class="pending">date: Tue, 21 Feb 2017 05:54:23 GMT</span>
+                <span class="pending">connection: keep-alive</span>
+</pre>
+
+            </div>
+            </div>
+        </div>
+
+          
+
+            <span class="close-icon"></span>
+        </div>
+
+</body>
+
+
+</html>
+<style type="text/css">
+
+    #ViewCorrectionCode{
+        width: 1150px;
+        height: 500px;
+    }
+
+ 
+
+    .container-content.with-steps .terminal-container{
+        padding-right: 0px;
+    }
+
+    .fa-angle-right{
+        height: 15px;
+        width: 15px;
+        color: white;
+        position: absolute;
+
+          right: 35px;
+    top: 8px;
+    font-size: 20px;
+    }
+
+
+
+    .collapse {
+        transition: 1s;
+    }
+
+    .highlight span{
+        margin-left: -170px;
+    }
+
+    #ViewCorrectionCode  .highlight span{
+    margin-left: -120px;
+    position: relative;
+    top: -10px;
+    }
+
+ 
+</style>
+
+<script>
+
+    function viewTransHistory() {
+        location.href = "_Layout-PMCL-TransactionHistory(PayAxis).html";
+    }
+
+    var divs = $('.cert-successful-container .left-half-container .terminal-container , .cert-successful-container .right-half-container .terminal-container');
+    var sync = function (e) {
+
+
+        var other = divs.not(this).off('scroll'),
+            other = other.get(0);
+        var percentage = this.scrollTop / (this.scrollHeight - this.offsetHeight);
+        other.scrollTop = percentage * (other.scrollHeight - other.offsetHeight);
+
+        //var percentageX = this.scrollLeft / (this.scrollWidth - this.offsetWidth);
+        //other.scrollLeft = percentageX * (other.scrollWidth - other.offsetWidth);
+
+
+        // Firefox workaround. Rebinding without delay isn't enough.
+        setTimeout(function () { other.on('scroll', sync); }, 10);
+    }
+    divs.on('scroll', sync);
+
+    $(".grid-fail").on("click", function () {
+        viewReason();
+    });
+
+    function viewReason() {
+        $(".cert-successful-container-screen").removeClass("hide");
+        $("#ViewCorrectionCode").removeClass("hide");
+    }
+
+    $(".cert-successful-container-screen , .close-icon").on("click", function () {
+
+        if (!$(".cert-successful-container-screen").hasClass("hide")) {
+            $(".cert-successful-container-screen").addClass("hide");
+            $(".cert-successful-container").addClass("hide");
+        }
+
+    });
+
+   
+
+
+    function goToStep1() {
+        location.href = "_Layout-PMCL-TestingPortal.html";
+    }
+
+    function gotToStep2() {
+        location.href = "_Layout-PMCL-TestingPortal-WalletAPI.html";
+    }
+
+    $(window).resize(function () {
+        setMainMenuHeight();
+    });
+
+    function setMainMenuHeight() {
+        var x = $(".content-area").height();
+
+        var y = $(window).height() - 55;
+
+        $(".main-menu").css("height", y);
+    }
+
+    $(document).ready(function () {
+
+        setMainMenuHeight()
+
+        //var y = $(".left-half-container").height();
+        //$(".right-half-container").css("height", y);
+    });
+
+    $("#prism-logo").on("click", function () {
+        location.href = "_Layout-PMCL-GettingStarted.html";
+    });
+
+    $("#logout-now").on("click", function () {
+        location.href = "_Layout-PMCL-Index.html";
+    });
+
+    $(".hamburger-container").on("click", function () {
+
+
+        if ($(".main-menu").hasClass("collapse")) {
+
+           
+            setTimeout(function () {
+                $(".main-menu").removeClass("collapse");
+            }, 200);
+
+            $(".content-area").removeClass("expanded");
+
+
+        
+        }
+
+        else {
+
+            setTimeout(function () {
+                $(".content-area").addClass("expanded");
+            }, 200);
+
+            $(".main-menu").addClass("collapse");
+
+ 
+        }
+    });
+
+    //$('#hamburger').click(function () {
+        //$('.main-menu').fadeOut(1000);
+    //})
+</script>

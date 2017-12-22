@@ -1,0 +1,858 @@
+﻿body * {
+    font-family: "Titillium Web";
+    transition: all ease-in-out 0.27s;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    background: rgba(0, 0, 0, 0.053);
+    height: 100vh;
+    position: relative;
+    font-size: 16px;
+}
+
+#ascrail2000 {
+    z-index: 9999 !important;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+.topContainer {
+    background: url(../images/image_Section1_overlayed.jpg) center right no-repeat;
+    background-size: 107% 100%;
+    height: 90%;
+    min-height: 360px;
+    max-height: 830px;
+    overflow: hidden;
+    border-bottom: 2px solid rgba(255, 255, 255, 1);
+    position: relative;
+}
+
+.sectionHeader {
+    width: 100%;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.27);
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.52);
+    z-index: 102;
+}
+
+    .sectionHeader.fixed {
+        background: rgba(0, 0, 0, 0.9);
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+    }
+
+.header_LogoArea {
+    position: absolute;
+    width: 200px;
+    height: 52px;
+    text-align: left;
+    background: url(../images/logo-pn-bank.png) no-repeat left top;
+    background-size: auto 100%;
+    left: 100px;
+    top: 12px;
+    cursor: pointer;
+}
+
+.header_Navigation {
+    position: absolute;
+    right: 100px;
+    top: 0px;
+    height: 100%;
+    width: calc(100% - 400px);
+    text-align: right;
+}
+
+.navigation_Item {
+    text-align: center;
+    display: inline-block;
+}
+
+    .navigation_Item a {
+        color: rgba(255, 255, 255, 1);
+        text-transform: uppercase;
+        display: block;
+        padding: 30px 10px;
+        font-size: 13px;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+        .navigation_Item a:hover {
+            border-bottom: 3px solid rgba(255, 255, 255, 1);
+            color: rgba(253, 222, 23, 1);
+        }
+
+        .navigation_Item.highlighted a {
+            color: rgba(0, 172, 253, 1);
+            font-size: 16px;
+            padding: 28px 20px;
+        }
+
+.sectionSlider {
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    z-index: 98;
+}
+
+.slider_Heading {
+    font-size: 3em;
+    color: rgba(255, 255, 255, 1);
+    position: absolute;
+    left: 100px;
+    bottom: 50%;
+    width: 720px;
+    font-weight: 300;
+    animation-name: textzoomin;
+	animation-duration: 1.5s; /* or: Xms */
+}
+
+.slider_Buttons {
+    position: absolute;
+    left: 100px;
+    bottom: 32%;
+    width: 720px;
+    height: 72px;
+    opacity: 0;
+    animation-name: buttonappear;
+	animation-duration: 1.5s; /* or: Xms */
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    z-index: 99;
+}
+
+.medium_Button {
+    width: 120px;
+    height: 32px;
+    display: inline-block;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 300;
+    margin-right: 20px;
+    text-align: center;
+    line-height: 32px;
+    cursor: pointer;
+}
+
+.large_Button {
+    width: 180px;
+    height: 52px;
+    display: inline-block;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 600;
+    margin-right: 20px;
+    text-align: center;
+    line-height: 52px;
+    cursor: pointer;
+}
+
+    .large_Button:hover,
+    .medium_Button:hover {
+        box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .large_Button:last-of-type {
+        margin: 0px;
+    }
+
+.btn_Solid_Red {
+    background-color: rgba(190, 40, 53, 1);
+    border: 2px solid rgba(190, 40, 53, 1);
+}
+
+    .btn_Solid_Red:hover {
+        background-color: rgba(221, 53, 72, 1);
+        border: 2px solid rgba(221, 53, 72, 1);
+    }
+
+.btn_Solid_Yellow {
+    background-color: rgba(252, 172, 0, 1);
+    border: 2px solid rgba(252, 172, 0, 1);
+}
+
+    .btn_Solid_Yellow:hover {
+        background-color: rgba(255, 210, 5, 1);
+        border: 2px solid rgba(255, 210, 5, 1);
+    }
+
+.btn_Solid_White {
+    background-color: rgba(227, 227, 227, 1);
+    border: 2px solid rgba(227, 227, 227, 1);
+    color: rgba(0, 0, 0, 0.53);
+}
+
+    .btn_Solid_White:hover {
+        background-color: rgba(255, 255, 255, 1);
+        border: 2px solid rgba(255, 255, 255, 1);
+    }
+
+
+.btn_Hollow_Gray {
+    background-color: rgba(0, 0, 0, 0.072);
+    border: 2px solid rgba(0, 0, 0, 0.21);
+}
+
+    .btn_Hollow_Gray:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        border: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+.btn_Solid_Silver {
+    background-color: rgba(247, 247, 247, 1);
+    border: 2px solid rgba(221, 221, 221, 1);
+    color: rgba(0, 0, 0, 0.72);
+}
+
+    .btn_Solid_Silver:hover {
+        background-color: rgba(255, 255, 255, 1);
+        border: 2px solid rgba(240, 240, 240, 1);
+    }
+
+
+.slider_KeyImage {
+    position: absolute;
+    right: 100px;
+    bottom: 0px;
+    height: 100%;
+    width: 53%;
+    background: url(../images/keyimage_Section1.png) no-repeat;
+    background-size: 100% auto;
+    background-position: right 760px;
+    animation-name: slidein;
+	animation-duration: 1.5s; /* or: Xms */
+    animation-delay: 0.5s; /* or: Xms */
+    animation-fill-mode: forwards; /* or: backwards, both, none */
+    max-width: 815px;
+}
+
+@keyframes slidein {
+    0% {
+        background-position: right 760px;
+    }
+
+    100% {
+        background-position: right bottom;
+        opacity: 1;
+    }
+}
+
+@keyframes textzoomin {
+    0% {
+        font-size: 27px;
+        opacity: 0;
+    }
+
+    100% {
+        font-size: 3em;
+        opacity: 1;
+    }
+}
+
+@keyframes buttonappear {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.contentContainer {
+    width: 100%;
+    position: relative;
+    margin-top: -52px;
+    float: left;
+    clear: both;
+}
+
+.sectionFeatures {
+    width: calc(100% - 200px);
+    top: 0px;
+    left: 100px;
+    background: rgba(255, 255, 255, 1);
+    padding-bottom: 30px;
+    float: left;
+    clear: both;
+    position: relative;
+    z-index: 99;
+}
+
+.feature_Item {
+    width: 25%;
+    margin: 20px 4%;
+    float: left;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+    .feature_Item:hover {
+        background: rgba(0, 0, 0, 0.016);
+    }
+
+.features_Heading, 
+.easysteps_Heading,
+.videos_Heading,
+.partners_Heading,
+.getstarted_Heading,
+.loginModal_FormHeading {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 300;
+    margin: 40px auto 20px auto;
+    width: 72%;
+    color: rgba(190, 40, 53, 1);
+}
+
+.features_SubHeading,
+.easysteps_SubHeading,
+.partners_SubHeading,
+.getstarted_SubHeading {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 10px auto;
+    width: 72%;
+    color: rgba(0, 0, 0, 0.72);
+}
+
+.feature_Icon {
+    width: calc(100% - 20px);
+    margin: 10px auto;
+    overflow: hidden;
+    position: relative;
+    transition: all ease-in-out 0.27s;
+
+}
+
+.feature_Icon i {
+    font-size: 52px;
+    color: rgba(221, 53, 72, 1);
+    transition: all ease-in-out 0.53s;
+    position: relative;
+    padding: 5px 0px;
+}
+
+.feature_Icon:after {
+	content: '';
+	display: block;
+	margin: auto;
+	height: 1px;
+	width: 0px;
+	background: transparent;
+	transition: width .5s ease, background-color .5s ease;
+}
+
+.feature_Item:hover .feature_Icon:after {
+	width: 100%;
+	background: rgba(221, 53, 72, 1);
+}
+
+.feature_Item:hover .feature_Icon i {
+    padding: 0px 0px 10px 0px;
+}
+
+.feature_Title {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 10px auto;
+}
+
+.feature_Content {
+    margin: 10px;
+    color: rgba(0, 0, 0, 0.53);
+}
+
+.sectionEasySteps {
+    overflow: hidden;
+    float: left;
+    width: 100%;
+    clear: both;
+    padding: 20px 0px 180px 0px;
+    text-align: center;
+    min-height: 200px;
+    position: relative;
+    z-index: 99;
+}
+
+.easysteps_SubHeading img {
+    width: 72%;
+    height: auto;
+    min-width: 320px;
+    max-width: 860px;
+}
+
+.easysteps_BottomImage {
+    margin-bottom: -500px;
+    width: 80%;
+    margin-top: -30px;
+    position: relative;
+    margin-left: 10%;
+}
+
+    .easysteps_BottomImage img {
+        width: 100%;
+        opacity: 0.40;
+    }
+
+.sectionVideos {
+    background: rgba(255, 255, 255, 1);
+    float: left;
+    clear: both;
+    width: 100%;
+    padding: 20px 0px 60px 0px;
+    text-align: center;
+    position: relative;
+    z-index: 99;
+}
+
+.video_Item {
+    display: inline-block;
+    width: 19.52%;
+    margin: 20px 1.2%;
+    text-align: left;
+    cursor: pointer;
+}
+
+    .video_Item .video_Thumbnail img {
+        width: 100%;
+        max-height: 220px;
+        opacity: 0.8;
+    }
+
+    .video_Item .video_Date {
+        margin: 10px 0px;
+        color: rgba(0, 0, 0, 0.53);
+        font-size: 14px;
+    }
+
+    .video_Item .video_Title {
+        color: rgba(0, 0, 0, 0.72);
+        font-size: 16px;
+    }
+
+        .video_Item .video_Title:after {
+            content: '';
+            display: block;
+	        margin: 10px auto 0px 0px;
+	        height: 1px;
+	        width: 0px;
+	        background: transparent;
+	        transition: width .5s ease, background-color .5s ease;
+        }
+
+    .video_Item:hover .video_Thumbnail img {
+        opacity: 1;
+    }
+
+    .video_Item:hover .video_Title:after {
+        width: 100%;
+        background: rgba(221, 53, 72, 1);
+    }
+
+.sectionPartners {
+    background: rgba(255, 255, 255, 1);
+    float: left;
+    clear: both;
+    width: 100%;
+    padding: 20px 0px;
+    text-align: center;
+    border-top: 2px solid rgba(240, 240, 240,1);
+    position: relative;
+    z-index: 99;
+}
+
+.partners_Carousel {
+    width: 80%;
+    margin: 20px 10%;
+    float: left;
+    overflow: hidden;
+}
+
+    .partner_Item {
+        display: inline-block;
+        width: 120px;
+        height: 52px;
+        margin: 10px;
+        cursor: pointer;
+        padding: 2px;
+        text-align: center;
+    }
+
+        .partner_Item img {
+            height: 100%;
+            width: auto;
+        }
+
+        .partner_Item:after {
+            content: '';
+	        display: block;
+	        margin: auto;
+	        height: 1px;
+	        width: 0px;
+	        background: transparent;
+	        transition: width .5s ease, background-color .5s ease;
+        }
+
+        .partner_Item:hover:after {
+            width: 100%;
+            background: rgba(221, 53, 72, 1);
+        }
+
+
+.sectionGetStarted {
+    background: url(../images/berlin.jpg) no-repeat center bottom;
+    background-size: 100%;
+    float: left;
+    clear: both;
+    width: 100%;
+    padding: 20px 0px;
+    text-align: center;
+    position: relative;
+    min-height: 700px;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.getstarted_BGImage {
+    position: fixed;
+    z-index: 1;
+    background: url(../images/logo-pn-bank.png) no-repeat center center;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-position: center -300px;
+    transition: none;
+    opacity: 0;
+}
+
+.getstarted_Heading,
+.getstarted_SubHeading {
+    color: rgba(255, 255, 255, 1);
+    z-index: 9;
+    position: relative;
+}
+
+.getstarted_Buttons {
+    z-index: 10;
+    position: relative;
+    margin: 30px auto;
+}
+
+.getstarted_KeyImage {
+    background: url(../images/Mobiles.png) no-repeat center bottom;
+    position: absolute;
+    width: 100%;
+    height: 70%;
+    background-size: auto 72%;
+    z-index: 9;
+    bottom: 0px;
+}
+
+
+.sectionMegaFooter {
+    background: rgba(40, 40, 40, 1);
+    float: left;
+    clear: both;
+    width: 100%;
+    padding: 20px 0px;
+    text-align: center;
+    min-height: 200px;
+    position: relative;
+    z-index: 999;
+}
+
+.loginModal {
+    position: fixed;
+    top: 80px;
+    left: 0px;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background: rgba(0, 0, 0, 0.52);
+    z-index: 999999;
+    display: none;
+}
+
+.loginModal_FormHeading {
+    text-align: left;
+    margin: 30px;
+    width: auto;
+
+}
+
+.loginModal_ContentArea {
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    min-height: 400px;
+    min-width: 240px;
+    background: rgba(255, 255, 255, 1);
+    left: 20%;
+    top: 15%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
+}
+
+.loginModal_FormContainer,
+.loginModal_OptionsContainer {
+    width: 53%;
+    display: inline-block;
+    margin: 0px;
+    vertical-align: top;
+    height: 100%;
+    z-index: 99;
+    position: relative;
+}
+
+.loginModal_OptionsContainer {
+    width: 41%;
+}
+
+.loginModal_FormRow {
+    margin: 30px;
+    text-align: left;
+    position: relative;
+}
+
+    .loginModal_FormRow label {
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.72);
+        display: block;
+        padding: 5px 0px;
+        font-weight: 300;
+    }
+
+    .loginModal_FormRow input {
+        font-size: 18px;
+        color: rgba(0, 0, 0, 0.72);
+        display: block;
+        padding: 10px;
+        font-weight: 300;
+        background: rgba(250, 250, 250, 1);
+        border: 0px;
+        width: calc(100% - 20px);
+        border-bottom: 2px solid rgba(0, 0, 0, 0.052);
+    }
+
+        .loginModal_FormRow input:focus {
+            border-bottom: 2px solid rgba(72, 153, 0, 1);
+        }
+
+.loginModal_ButtonsRow {
+    text-align: right;
+}
+
+    .loginModal_FormRow .medium_Button:last-of-type {
+        margin: 0px;
+    }
+
+a.forgotPassword {
+    color: rgba(0, 0, 0, 0.53);
+    position: absolute;
+    right: 0px;
+    top: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+    a.forgotPassword:hover {
+        color: rgba(252, 172, 0, 1);
+    }
+
+
+.loginModal_Separator {
+    display: inline-block;
+    position: relative;
+    width: 5%;
+    background: url(../images/bg_vseparator.png) repeat-y center center;
+    height: 80%;
+    z-index: 99;
+    margin: 5% 0px;
+}
+
+.separator_Text {
+    position: absolute;
+    top: calc(50% - 20px);
+    width: 100%;
+    text-align:center;
+    left: 0px;
+    padding: 5px 0px;
+    background: rgba(253, 222, 23, 1);
+}
+
+
+.loginModal_SMButtons {
+    margin: 30px;
+}
+
+
+.smbutton_Button {
+    height: 52px;
+    width: 100%;
+    margin: 30px 0px;
+    cursor: pointer;
+}
+
+.smbutton_Button:hover {
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.27);
+}
+
+.smbutton_Icon {
+    width: 16%;
+    height: 80%;
+    border-right: 1px solid rgba(0, 0, 0, 0.21);
+    margin-right: 20px;
+    display: inline-block;
+    vertical-align: bottom;
+    position: relative;
+    top: -5px;
+}
+
+.smbutton_Text {
+    font-size: 20px;
+    font-weight: 200;
+    color: rgba(255, 255, 255, 1);
+    text-align: left;
+    line-height: 52px;
+}
+
+
+.smbutton_Google {
+    background: rgba(242, 85, 59, 1);
+    border-top: 1px solid rgba(243, 94, 65, 1);
+    border-bottom: 1px solid rgba(172, 40, 27, 1);
+}
+
+    .smbutton_Google .smbutton_Icon {
+        background: url(../images/icon_Google.png) no-repeat center center;
+        background-size: auto 60%;
+    }
+
+.smbutton_Twitter {
+    background: rgba(0, 167, 253, 1);
+    border-top: 1px solid rgba(0, 176, 253, 1);
+    border-bottom: 1px solid rgba(17, 114, 183, 1);
+}
+
+    .smbutton_Twitter .smbutton_Icon {
+        background: url(../images/icon_Twitter.png) no-repeat center center;
+        background-size: auto 60%;
+    }
+    
+.smbutton_Facebook {
+    background: rgba(59, 89, 152, 1);
+    border-top: 1px solid rgba(65, 98, 163, 1);
+    border-bottom: 1px solid rgba(37, 63, 117, 1);
+}
+
+    .smbutton_Facebook .smbutton_Icon {
+        background: url(../images/icon_Facebook.png) no-repeat center center;
+        background-size: auto 60%;
+    }
+
+.loginModal_BG {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: url(../images/bg_PopupForm.png) repeat-x center bottom;
+    background-size: auto 50%;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.loginModal_Close {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background: rgba(247, 247, 247, 1);
+    color: rgba(190, 40, 53, 1);
+    font-size: 40px;
+    text-align: center;
+    line-height: 40px;
+    z-index: 999;
+    cursor: pointer;
+}
+
+    .loginModal_Close i {
+        font-size: 28px;
+        line-height: 40px;
+        font-weight: 100;
+    }
+
+.megafooter_Col {
+    display: inline-block;
+    width: 22%;
+    margin: 1%;
+    text-align: left;
+    vertical-align: top;
+}
+
+.footer_Heading {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.52);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.21);
+    font-weight: 600;
+
+}
+
+.footer_Links a {
+    display: block;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 300;
+    text-decoration: none;
+    margin: 5px 0px;
+}
+
+    .footer_Links a:hover {
+        text-decoration: underline;
+        color: rgba(253, 222, 23, 1);
+    }
+
+.footer_Logo {
+    background: url(../images/logo-pn-bank-grey.png) no-repeat left center;
+    width: 240px;
+    height: 40px;
+    background-size: contain;
+    opacity: 0.53;
+    cursor: pointer;
+    margin: 0px 0px 10px 0px;
+    background-position-x: -11%;
+}
+
+    .footer_Logo:hover {
+        opacity: 1;
+    }
+
+.chatBox {
+    position: fixed;
+    bottom: 0px;
+    right: 20px;
+    width: 200px;
+    height: 32px;
+    opacity: 0.72;
+    z-index: 999;
+    cursor: pointer;
+}
+
+    .chatBox:hover {
+        opacity: 1;
+    }

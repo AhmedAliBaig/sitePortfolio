@@ -1,0 +1,190 @@
+<html>
+
+<head>
+
+
+	<script src="js/angular.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/layout-functions.js"></script>
+
+	<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700'>
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/layout-style.css" />
+    <link rel="stylesheet" href="css/color-style.css" />
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+    <link rel='stylesheet' type='text/css' href="font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" />
+
+
+
+</head>
+
+<body>
+	<div class="header-div">
+        <div class="logo-container">
+            <span id="prism-logo" onclick="returntohomepage()"></span>
+        </div>
+        <div class="hamburger-container" onclick="togglemenu()">
+            <span id="hamburger"></span>
+        </div>
+        <div class="polygon-backdrop">
+            <div class="row" id="search">
+                <div class="col-sm-12">
+                    <input class="form-control" placeholder="Search" type="text" />
+                    <span class="search-icon"></span>
+                </div>
+            </div>
+
+            <div class="user-credentials-container in-header">
+                <div class="img-container">
+
+                </div>
+                <div class="name-container">
+                    <span class="user-name">Ahmed Saleem</span>
+                    <div class="last-axx">
+                        <span class="last-login">Last Access:</span>
+                        <span class="date">16 May, 2016</span>
+                        <span>|</span>
+                        <span class="time">11:45 PM</span>
+                    </div>
+                </div>
+                <span id="logout-now" onclick="logout()" class="logout" title="Log Out"></span>
+            </div>
+
+
+        <div class="header-controls"></div>
+            </div>
+    </div>
+
+    <div class="main-menu">
+
+
+
+        <ul class="menu-item-container">
+            <li class="module ">
+                <div class="icon"><span class="navItem_Icon item-APIIntegration"></span></div>
+                <a class="name" href="_Layout-PMCL-ApiIntegration.html">Developer's Guide</a>
+            </li>
+            <li class="module">
+                <div class="icon"><span class="navItem_Icon item-TestTransaction "></span></div>
+                <a class="name" href="_Layout-PMCL-TestingPortal.html">Test</a>
+            </li>
+
+
+            <li class="module">
+                <div class="icon"><span class="navItem_Icon item-UploadDocuments"></span></div>
+                <a class="name" href="_Layout-PMCL-UploadDocument.html">Upload Documents</a>
+            </li>
+
+            <li class="module">
+                <div class="icon"><span class="navItem_Icon item-Tariff"></span></div>
+                <a class="name" href="_Layout-PMCL-Tarriffs.html">Tariff</a>
+            </li>
+            <li class="module">
+                <div class="icon"><span class="navItem_Icon item-FAQ"></span></div>
+                <a class="name" href="_Layout-PMCL-FAQs.html">FAQs</a>
+            </li>
+            <li class="module">
+                <div class="icon"><span class="navItem_Icon item-MERCH"></span></div>
+                <a class="name" href="_Layout-PMCL-MerchantPortal.html">Merchant Portal</a>
+            </li>
+        </ul>
+
+    </div>
+    
+
+    <div class="content-area">
+        <div class="card-layout" id="getting-started-container">
+
+
+         
+            <div class="container-content">
+
+                <article class="large-8 columns large-offset-1 documentation-content">
+                 
+
+                    <div class="cover-image generic apiInteg">
+
+                        <div class="content-box">
+                            <span class="fa fa-play-circle"></span>
+                            <div class="headings">
+                                <h1>Getting Started</h1>
+                                <h2>Welcome to PMCL</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p>PMCL is a service that allows you to securely store credit cards and use them to transact against any number of payment gateways and third party APIs. It does this by simultaneously providing a card tokenization/vault service as well as a gateway and receiver integration service.</p>
+
+                    <div class="mainHeading">Overview</div>
+
+                    <p>At a high level, executing a financial transaction with PMCL involves the following sequence of events:</p>
+
+                    <p style="background-color:#f2f4f9"><img src="images/Image 2014-06-26 at 6.02.46 PM.png"></p>
+
+                    <p>By using tokenization, PMCL is able to execute against any number of gateways and APIs on your behalf without the credit card data ever touching your servers.</p>
+
+                    <div class="mainHeading">Quick Start</div>
+
+                    <p>In order to start executing transactions and collecting payments from your users, you will need to:</p>
+
+                    <ol>
+                        <li><a href="https://pmcl.com/trial-qualification">Register</a> for a free account, and then create your <a href="/basics/credentials">API credentials</a>.</li>
+                        <li><a href="/basics/gateway">Add a gateway</a> to transact against (you can also transact against non-gateway <a href="/guides/payment-method-distribution">third party APIs</a>)</li>
+                        <li><a href="/basics/payment-method">Start collecting payment information</a> from your users</li>
+                        <li><a href="/basics/purchase">Make a purchase</a> against the gateway with your users’ payment information</li>
+                    </ol>
+
+                    <p>If you’re interested in transacting against a third party API, and not a gateway, please see our <a href="/guides/payment-method-distribution">Payment Method Distribution</a> functionality.</p>
+
+                    <div class="button-container">
+                        <button type="button" class="btn btn-primary pull-right" onclick="goToPage()">Get Started</button>
+                    </div>
+
+                </article>
+                
+
+                
+
+            </div>
+
+          
+
+
+           
+
+        </div>
+    </div>
+</body>
+
+
+</html>
+<style type="text/css">
+
+    .main-menu{
+
+    }
+
+
+
+
+    .collapse {
+        transition: 1s;
+    }
+</style>
+
+<script>
+
+    function goToPage() {
+        location.href = "_Layout-PMCL-ApiIntegration.html";
+    }
+
+ 
+    $(document).ready(function () {
+        var x = $(".content-area").height();
+        $(".main-menu").css("height", x);
+    });
+
+
+
+</script>

@@ -1,0 +1,295 @@
+﻿<!DOCTYPE html>
+
+
+<style>
+    .account-id {
+        color: #3cba54;
+        padding-left: 5px;
+    }
+
+    .default-label{
+        float: right;
+    }
+
+    @media all and (max-width: 480px) {
+
+        .accordionTitle{
+            font-size: 10.5px !important;
+        }
+
+
+       .accordion-container .col-sm-2.col-xs-6{
+            width: 55%;
+        }
+
+       .accordion-container .col-sm-4.col-xs-6{
+            width: 45%;
+        }
+
+        .fixit {
+     top: 6px !important;
+               }
+    }
+
+    @media all and (max-width: 768px) {
+
+        .fixit {
+     top: 10px;
+               }
+    }
+
+</style>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Wallet | Funky Factory</title>
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/my-style.css"/>
+
+</head>
+
+
+
+<body>
+
+    <a href="DashBoard.html" title="Return To Dashboard"><span class="dasboard-icon"></span></a>
+    <div class="mainHeading">Wallet Information</div>
+    <a onclick="LogOut()" title="Logout"><span class="logout-icon"></span></a>
+
+   
+    <div id="SVADetailData">
+        <form>
+        <fieldset>
+            <div class="row">
+                <div class="underline-row">
+        <div class="col-sm-2 col-xs-6">
+                <label  class="form-label">Title</label>
+            </div>
+                <div class="col-sm-4 col-xs-6">
+                <label class="form-control" id="lblTitle" disabled></label>
+                    </div>
+                </div>
+       
+                <div class="underline-row" style="border-bottom:none">
+                    <div div class="col-sm-2 col-xs-6 fixit">
+                        <label class="form-label">No. of Instrument(s): </label>
+                    </div>
+                    <div class="col-sm-4 col-xs-6 fixit">
+                        <label class="form-control" id="lblSVAs" disabled></label>
+                    </div>
+                </div>
+            </div>
+            </fieldset>
+            </form>
+    </div>
+
+    <script>
+
+        function LogOut() {
+            location.href = "PRISM-newui-login.html";
+        }
+
+        $(document).ready(function () {
+            GetWalletID(sessionStorage.getItem("Alias"));
+        });
+        function GetWalletID(Alias) {
+            $.ajax({
+                type: "GET",
+                url: "http://192.168.64.10:8123/api/v1/Customers/" + Alias + "/wallets?LicenseKey=A394F15662BE309&IsApplication=0&UserName=" + sessionStorage.getItem('UserID') + "&Password=" + sessionStorage.getItem('Password') + "&SessionID=" + sessionStorage.getItem('SessionID'),
+
+                beforeSend: function (request) {
+
+                    request.setRequestHeader("Authorization", "Bearer 9cd19f21-932f-4b02-b26d-ded9eed66842");
+                    request.setRequestHeader("LicenseKey", "A394F15662BE3095C4D7B51F43EAEC9ACAB6A080");
+                },
+                dataType: 'json',
+                crossDomain: true,
+                contentType: "application/json; charset=utf-8",
+                error: function (request, status, error) {
+                    $("#FailMessage").css("display", "inline-block");
+                    $("#FailMessage").text(request.responseText);
+                },
+
+                success: function (response) {
+                    console.log(response);
+                    console.log("GetWalletID");
+                    $("#lblTitle").text(response.ResponseData.Title);
+                    $("#lblSVAs").text(response.ResponseData["No of SVA"]);
+                    GetSVAs(response.ResponseData.WalletID);
+
+
+
+                    //location.href = "CustomerRegistration.html";
+                }
+            });
+        }
+
+        function GetSVAs(WalletID) {
+            $.ajax({
+                type: "GET",
+                url: "http://192.168.64.10:8123/api/v1/Customers/Wallet/" + WalletID + "/SVA?LicenseKey=LA1214545&IsApplication=0&UserName=" + sessionStorage.getItem('UserID') + "&Password=" + sessionStorage.getItem('Password') + "&SessionID=" + sessionStorage.getItem('SessionID'),
+
+                beforeSend: function (request) {
+
+                    request.setRequestHeader("Authorization", "Bearer 9cd19f21-932f-4b02-b26d-ded9eed66842");
+                    request.setRequestHeader("LicenseKey", "A394F15662BE3095C4D7B51F43EAEC9ACAB6A080");
+                },
+                dataType: 'json',
+                crossDomain: true,
+                contentType: "application/json; charset=utf-8",
+                error: function (request, status, error) {
+
+                    $("#FailMessage").css("display", "inline-block");
+                    $("#FailMessage").text(request.responseText);
+
+                },
+
+                success: function (response) {
+                    var innerHtml="",status;
+                    console.log("GetSVAs");
+                    console.log(response);
+                    console.log(response.ResponseData["SVA Detail"][0].IsDefault);
+                    console.log(response.ResponseData["SVA Detail"][0].accounts.AccountID);
+                    $.each(response.ResponseData["SVA Detail"], function (index, value) {
+                        var Number = index + 1;
+                        var backgcolor;
+                        
+
+                        if (value.IsDefault == '1') {
+                            if (value.accounts.AvailableBalance != "0") {
+                                var length = value.accounts.AvailableBalance.length - 2;
+                                var FormattedAvailableBalance = value.accounts.AvailableBalance.substr(0, length) + '.' + value.accounts.AvailableBalance.substr(length, 2);
+                            }
+                            else {
+                                var FormattedAvailableBalance = "0.00";
+                            }
+                            if(value.accounts.Status=="00")
+                            {
+                                status="Active";
+                            }
+                            else
+                            {
+                                status="Inactive";
+                            }
+                            innerHtml +=
+                                 "<div class='accordion-container'>" +
+                                 "<form>" +
+                                 "<fieldset class='accordion'>" +
+                                 "<h1 class='accordionTitle' style='background-color:" + backgcolor + "'>SVA -" + "<span class='account-id'>" + value.accounts.AccountID + "</span>" + "<span class='default-label'>(Default)</span></h1>" +
+                                 "<div class='row'>" +
+                                 //"<div class='underline-row'>" +
+                                 //         "<div class='col-sm-2 col-xs-6'><label class='form-label'>Account ID</label></div>" +
+                                 //         "<div class='col-sm-4 col-xs-6'><label class='form-control' >" + value.accounts.AccountID + "</label></div>" +
+                                 //         "</div>" +
+                                          "<div class='underline-row'>" +
+                                         "<div class='col-sm-2 col-xs-6'><label class='form-label'>Available Balance</label></div>" +
+                                          "<div class='col-sm-4 col-xs-6'><label class='form-control' >" + FormattedAvailableBalance + " </label></div>" +
+                                          "</div>" +
+                                          "</div>" +
+                                          "<div class='row'>" +
+                                          "<div class='underline-row'>" +
+                                          "<div class='col-sm-2 col-xs-6'><label class='form-label'>Status</label></div>" +
+                                          "<div class='col-sm-4 col-xs-6'><label class='form-control' >" + status + "</label></div>" +
+                                          "</div>" +
+                                          "<div class='underline-row'>" +
+                                          "<div class='col-sm-2 col-xs-6'><label class='form-label'>Type</label></div>" +
+                                          "<div class='col-sm-4 col-xs-6'><label class='form-control' >" + value.Type + "</label></div>" +
+                                          "</div>" +
+                                          "</div>" +
+                             "</fieldset>" +
+                                "</form>" +
+                                "</div>";
+                            // sessionStorage.setItem('DefaultSVA', value.accounts.AccountID);
+                            //sessionStorage.setItem('AvailableBalance', value.accounts.AvailableBalance);
+                        }
+                        else {
+
+                                if (value.accounts.AvailableBalance != "0") {
+                                    var length = value.accounts.AvailableBalance.length - 2;
+                                    var FormattedAvailableBalance = value.accounts.AvailableBalance.substr(0, length) + '.' + value.accounts.AvailableBalance.substr(length, 2);
+                                }
+                                else {
+                                    var FormattedAvailableBalance = "0.00";
+                                }
+                                if(value.accounts.Status=="00")
+                                {
+                                    status="Active";
+                                }
+                                else
+                                {
+                                    status="Inactive";
+                                }
+                                var name='';
+                                if (value.Type == 'External') {
+                                    name = 'Account';
+                                    backgcolor = '#005951';
+                                    FormattedAvailableBalance = 'N/A';
+                                    $(this).find(".accordionTitle").css("background-color", "yellow");
+                                }
+                                else {
+                                    name = 'SVA';
+                                    backgcolor = '#595959';
+                                }
+                                innerHtml +=
+                                      "<div class='accordion-container'>" +
+                                      "<form>" +
+                                 "<fieldset class='accordion'>" +
+                                 "<h1 class='accordionTitle' style='background-color:" + backgcolor + "'>" + name + "  -" + "<span class='account-id'>" + value.accounts.AccountID + "</span>" + " </h1>" +
+                                 "<div class='row'>" +
+                                 //"<div class='underline-row'>" +
+                                 //         "<div class='col-sm-2 col-xs-6'><label class='form-label'>Account ID</label></div>" +
+                                 //         "<div class='col-sm-4 col-xs-6'><label class='form-control' >" + value.accounts.AccountID + "</label></div>" +
+                                 //          "</div>" +
+                                          "<div class='underline-row'>" +
+                                          "<div class='col-sm-2 col-xs-6'><label class='form-label'>Available Balance</label></div>" +
+                                          "<div class='col-sm-4 col-xs-6'><label class='form-control' >" + FormattedAvailableBalance + " </label></div>" +
+                                          "</div>" +
+                                          "</div>" +
+                                          "<div class='row'>" +
+                                          "<div class='underline-row'>" +
+                                          "<div class='col-sm-2 col-xs-6'><label class='form-label'>Status</label></div>" +
+                                          "<div class='col-sm-4 col-xs-6'><label class='form-control' >" + status + "</label></div>" +
+                                           "</div>" +
+                                          "<div class='underline-row'>" +
+                                          "<div class='col-sm-2 col-xs-6'><label class='form-label'>Type</label></div>" +
+                                          "<div class='col-sm-4 col-xs-6'><label class='form-control' >" + value.Type + "</label></div>" +
+                                          "</div>" +
+                                          "</div>" +
+                             "</fieldset>" +
+                              "</form>" +
+                                    "</div>";
+                            }
+
+                    });
+                    $(innerHtml).appendTo("#SVADetailData");
+
+
+
+                    //location.href = "CustomerRegistration.html";
+                }
+            });
+        }
+
+        $body = $("body");
+
+        $(document).on({
+            ajaxStart: function () { $body.addClass("loading"); },
+
+            ajaxStop: function () { $body.removeClass("loading"); }
+        });
+
+    </script>
+    
+    <div class="modal"><!-- Place at bottom of page --></div>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+
+body {
+    background-color: #eceff1;
+}
+
+ 
+
+.logo-container {
+    background-color: #e0e0e0;
+}
+
+
+
+
+
+.main-menu{
+background-color: #cfd8dc;
+}
+
+.user-credentials-container{
+    background-color: #1c2629;
+}
+
+.header-div{
+    background-color: #5b426b;
+
+}
+
+.user-credentials-container {
+    color: #eceff1;
+}
+
+.img-container {
+    border: 1px solid black;
+}

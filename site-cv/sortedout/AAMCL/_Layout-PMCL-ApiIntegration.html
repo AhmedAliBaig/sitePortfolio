@@ -1,0 +1,440 @@
+<html>
+
+<head>
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/layout-functions.js"></script>
+
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700'>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/layout-style.css" />
+    <link rel="stylesheet" href="css/color-style.css" />
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+    <link rel='stylesheet' type='text/css' href="font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" />
+
+</head>
+
+<body>
+	<div class="header-div">
+        <div class="logo-container">
+            <span id="prism-logo"></span>
+        </div>
+        <div class="hamburger-container">
+            <span id="hamburger"></span>
+        </div>
+        <div class="polygon-backdrop">
+            <div class="row" id="search">
+                <div class="col-sm-12">
+                    <input class="form-control" placeholder="Search" type="text" />
+                    <span class="search-icon"></span>
+                </div>
+            </div>
+
+            <div class="user-credentials-container in-header">
+                <div class="img-container">
+
+                </div>
+                <div class="name-container">
+                    <span class="user-name">Ahmed Saleem</span>
+                    <div class="last-axx">
+                        <span class="last-login">Last Access:</span>
+                        <span class="date">16 May, 2016</span>
+                        <span>|</span>
+                        <span class="time">11:45 PM</span>
+                    </div>
+                </div>
+                <span class="logout" id="logout-now" title="Log Out"></span>
+            </div>
+
+
+        <div class="header-controls"></div>
+            </div>
+    </div>
+
+    
+    <div class="main-menu">
+        
+   
+ 
+        <ul class="menu-item-container">
+            <li class="module selected">
+                <div class="icon"><span class="navItem_Icon item-APIIntegration"></span></div>
+                <a class="name" href="_Layout-PMCL-ApiIntegration.html">Developer's Guide</a>
+            </li>
+            <li class="module ">
+                <div class="icon"><span class="navItem_Icon item-TestTransaction "></span></div>
+                <a class="name" href="_Layout-PMCL-TestingPortal.html">Test</a>
+            </li>
+
+
+            <li class="module">
+                <div class="icon"><span class="navItem_Icon item-UploadDocuments"></span></div>
+                <a class="name" href="_Layout-PMCL-UploadDocument.html">Upload Documents</a>
+            </li>
+
+            <li class="module">
+                <div class="icon"><span class="navItem_Icon item-Tariff"></span></div>
+                <a class="name" href="_Layout-PMCL-Tarriffs.html">Tariff</a>
+            </li>
+            <li class="module">
+                <div class="icon"><span class="navItem_Icon item-FAQ"></span></div>
+                <a class="name" href="_Layout-PMCL-FAQs.html">FAQs</a>
+            </li>
+            <li class="module">
+                <div class="icon"><span class="navItem_Icon item-MERCH"></span></div>
+                <a class="name" href="_Layout-PMCL-MerchantPortal.html">Merchant Portal</a>
+            </li>
+        </ul>
+     
+    </div>
+
+    <div class="content-area">
+        <div class="card-layout">
+
+
+          
+            <div class="cover-image generic apiInteg">
+
+                <div class="content-box">
+                    <span class="fa fa-download"></span>
+                    <div class="headings">
+                        <h1>Developers Guide</h1>
+                        <h2>Choose the plugins you intend to download</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-content two-third">
+
+                <div class="box-seperator">
+                
+
+                    <div id="js-container" class="api-cont">
+                        <span class="api virtualcart-logo"></span>
+                        <span class="label">Virtual Cart</span>
+                    </div>
+
+                    <div id="js-container" class="api-cont">
+                        <span class="api js-logo"></span>
+                        <span class="label">JavaScript</span>
+                    </div>
+
+                    <div id="opencart-container" class="api-cont">
+                        <span class="api opencart-logo"></span>
+                        <span class="label">Opencart</span>
+                    </div>
+                    <div id="presta-container" class="api-cont">
+                        <span class="api presta-logo"></span>
+                        <span class="label">Presta Shop</span>
+                    </div>
+                    <div id="woo-container" class="api-cont">
+                        <span class="api woo-logo"></span>
+                        <span class="label">Woo Commerce</span>
+                    </div>
+
+                    <div id="wamp-container" class="api-cont">
+                        <span class="api wamp-logo"></span>
+                        <span class="label">WAMP</span>
+                    </div>
+
+                    <div id="magento-container" class="api-cont">
+                        <span class="api magento-logo"></span>
+                        <span class="label">Magento</span>
+                    </div>
+
+                    <div id="wordpress-container" class="api-cont">
+                        <span class="api wordpress-logo"></span>
+                        <span class="label">WordPress</span>
+                    </div>
+
+                    <div id="php-container" class="api-cont">
+                        <span class="api php-logo"></span>
+                        <span class="label">PHP</span>
+                    </div>
+
+                    <div id="aspmvc-container" class="api-cont">
+                        <span class="api aspmvc-logo"></span>
+                        <span class="label">ASP-MVC</span>
+                    </div>
+
+                    <div id="aspnet-container" class="api-cont">
+                        <span class="api asp-logo"></span>
+                        <span class="label">ASP.NET</span>
+                    </div>
+
+                    <div id="apple-container" class="api-cont">
+                        <span class="api apple-logo"></span>
+                        <span class="label">IOS</span>
+                    </div>
+
+                </div>
+
+
+                <div class="box-seperator">
+                    <h2>Mobile SDK</h2>
+
+                    <div class="wrapper">
+                        <div id="windows-container" class="api-cont">
+                            <span class="api windows-logo"></span>
+                            <span class="label">Windows</span>
+                        </div>
+
+                        <div id="android-container" class="api-cont">
+                            <span class="api android-logo"></span>
+                            <span class="label">Android</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="box-seperator">
+                 
+                </div>
+
+
+                <div class="box-seperator">
+                    <h2>Documents</h2>
+         
+                    <div class="wrapper">
+                    <div id="merchant-doc-container" class="api-cont">
+                        <span class="api merchantdocument-logo"></span>
+                        <span class="label">Merchant Integration Document</span>
+                    </div>
+
+                    <div id="bank-doc-container" class="api-cont">
+                        <span class="api banktdocument-logo"></span>
+                        <span class="label">Bank Integration Document</span>
+                    </div>
+                    </div>
+                </div>
+
+                
+             
+
+              
+              
+
+
+                </div>
+            <div class="container-content one-third">
+                <div class="small-box" id="credentials-box">
+                    <div class="panel panel-default">
+                        <div id="testKeyHeading" class="panel-heading" role="tab">
+                            <div class="collapsed in">
+                                <div class="clearfix">
+                                    <span class="pull-left">Test Keys</span>
+
+                                </div>
+                                <div class="links">
+                                    <a href="#" class="links custom-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Use these keys to test your integration. Corresponding transactions can be viewed on Sandbox Panel.">
+                                        What are test keys?
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="testKey" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="testKeyHeading">
+                            <div class="panel-body">
+                                <div class="subpanel">
+                                    <div class="panel-subheading">
+                                        Checkout page url
+                                    </div>
+
+                                    <p class="text-special">
+                                        <span id="copyButton1" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click copy to clipboard">
+                                            Permanent or Vanity URL
+                                            <!--<span class="glyphicon glyphicon-copy"></span>-->
+                                        </span>
+                                    </p>
+
+                                    <p id="msg1" class="text-special"></p>
+
+                                    <p class="text-warning ellipse">
+                                        <span id="testKeyVanityURL" href="javascript:;">https://sandbox.citruspay.com/bnikod5ur4</span>
+                                    </p>
+                                </div>
+                                <div class="subpanel">
+                                    <div class="panel-subheading">Security Credentials</div>
+
+                                    <p class="text-special">
+                                        <span id="copyButton2" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click copy to clipboard">
+                                            Access Key
+                                            <!--<span class="glyphicon glyphicon-copy"></span>-->
+                                        </span>
+                                    </p>
+
+                                    <p id="msg2" class="text-special"></p>
+
+                                    <p class="text-warning ellipse">
+                                        <span id="testKeyAccessKey" href="javascript:;">OQB7JPQRHFILRSZZCYJF</span>
+                                    </p>
+
+
+                                    <p class="text-special">
+                                        <span id="copyButton3" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click copy to clipboard">
+                                            Secret Key
+                                            <!--<span class="glyphicon glyphicon-copy"></span>-->
+                                        </span>
+                                    </p>
+
+                                    <p id="msg3" class="text-special"></p>
+
+                                    <p class="text-warning ellipse">
+                                        <span id="testKeySecretKey" href="javascript:;">2b9dd02e7248c86bd346ac73df8d275423bdcfa2</span>
+                                    </p>
+
+
+                                </div>
+                                <div class="subpanel">
+                                    <div class="panel-subheading">
+                                        Download Key Stores
+                                    </div>
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>Citrus.JS (Web)</td>
+                                                <td>:<a href="/citrus-mob/MOB/downloadCitrusJS" id="testCitrusJs">Download</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile SDK</td>
+                                                <td>:<a href="/citrus-mob/MOB/downloadMobileSDK" id="testMobileSdk">Download</a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mainHeading">
+                Platforms Supported
+            </div>
+            <div class="container-content">
+                <div id="shopify-container" class="api-cont">
+                    <span class="api shopify-logo"></span>
+                    <span class="label">Shopify</span>
+                </div>
+
+                <div id="kartrocket-container" class="api-cont">
+                    <span class="api kartrocket-logo"></span>
+                    <span class="label">Kartrocket</span>
+                </div>
+
+                <div id="shopmatic-container" class="api-cont">
+                    <span class="api shopmatic-logo"></span>
+                    <span class="label">Shopmatic</span>
+                </div>
+
+            </div>
+
+            <div class="mainHeading">
+                Languages Supported
+            </div>
+            <div class="container-content" id="languages-container">
+                <div id="java-container" class="api-cont">
+                    <span class="api java-logo"></span>
+                    <span class="label">Java</span>
+                </div>
+
+                <div id="php-container" class="api-cont">
+                    <span class="api phpp-logo"></span>
+                    <span class="label">PHP</span>
+                </div>
+
+                <div id="nodejs-container" class="api-cont">
+                    <span class="api nodejs-logo"></span>
+                    <span class="label">Node.JS</span>
+                </div>
+
+                <div id="csharp-container" class="api-cont">
+                    <span class="api csharp-logo"></span>
+                    <span class="label">C#</span>
+                </div>
+
+                <div id="vb-container" class="api-cont">
+                    <span class="api vb-logo"></span>
+                    <span class="label">VB.NET</span>
+                </div>
+
+                <div id="ruby-container" class="api-cont">
+                    <span class="api ruby-logo"></span>
+                    <span class="label">Ruby</span>
+                </div>
+
+                <div id="python-container" class="api-cont">
+                    <span class="api python-logo"></span>
+                    <span class="label">Python</span>
+                </div>
+
+            </div>
+
+
+           
+
+        
+    </div>
+        </div>
+</body>
+
+
+</html>
+<style type="text/css">
+
+    .main-menu{
+
+    }
+
+    .content-area {
+
+    }
+	
+</style>
+
+<script>
+
+    $(document).ready(function () {
+        var x = $(".content-area").height();
+        $(".main-menu").css("height", x);
+    });
+
+
+    $("#prism-logo").on("click", function(){
+        location.href = "_Layout-PMCL-GettingStarted.html";
+    });
+
+    $("#logout-now").on("click", function () {
+        location.href = "_Layout-PMCL-Index.html";
+    });
+
+    $(".hamburger-container").on("click", function () {
+
+
+        if ($(".main-menu").hasClass("collapse")) {
+
+
+            setTimeout(function () {
+                $(".main-menu").removeClass("collapse");
+            }, 200);
+
+            $(".content-area").removeClass("expanded");
+
+
+
+        }
+
+        else {
+
+            setTimeout(function () {
+                $(".content-area").addClass("expanded");
+            }, 200);
+
+            $(".main-menu").addClass("collapse");
+
+
+        }
+    });
+
+</script>

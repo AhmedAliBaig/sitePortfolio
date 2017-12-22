@@ -1,0 +1,650 @@
+
+body{
+        background: url("../images/White-wallpaper-white-background-highfidelity.jpg") no-repeat top center fixed;
+      
+         min-height: 100%;
+          background-attachment: fixed;
+          -moz-background-size: cover;
+          -webkit-background-size: cover;
+          o-background-size: cover;
+          background-size: cover;
+          height: 100vh;
+}
+
+body * {
+		font-family: "Open Sans", calibri, tahoma, arial;
+          transition: 0.2s all ease-in-out;
+	}
+
+label{
+    font-weight: 100;
+    color: black;
+}
+
+.dasboard-icon{
+        background: url("../images/icon_iconDashboardNav.png") no-repeat center center;
+    height: 20px;
+    width: 20px;
+    float: left;
+    position: relative;
+    display: block;
+    background-size: 100%;
+    margin-top: 1.3em;
+    margin-left: 1em;
+    cursor: pointer;
+}
+
+.logout-icon{
+        background: url("../images/icon_iconLogout.png") no-repeat center center;
+    height: 20px;
+    width: 20px;
+    float: left;
+    position: absolute;
+    display: block;
+    background-size: 100%;
+      margin-top: 1.3em;
+    margin-right: 1em;
+    cursor: pointer;
+    top: 0%;
+    right: 0%;
+}
+
+
+.mainHeader {
+		background: #424242;
+        position: relative;
+        width: 100%;
+        display: block;
+        height: 56px;
+
+	}
+
+.logoContainer {
+		background: url(images/logo.png);
+		position: relative;
+		padding: 0px;
+		background-repeat: no-repeat;
+		padding: 0px;
+		background-size: 220px;
+		margin: 0px 20px;
+        width: 210px;
+        display: inline-block;
+        height: 100%;
+        float: left;
+        background-size: 100%;
+        background-position-y: 35%;
+	}
+
+.HeaderHeading{
+    		color: rgba(255,255,255,0.7);
+		font-weight: normal;
+		margin: 0;
+		width: 245px;
+		padding: 15px 0px;
+        margin: 0px 50px;
+     display: inline-block;
+		font-size: 18px;
+        position: relative;
+        float: right;
+}
+
+.secondaryHeading{
+        color: #c0c0c0;
+		font-weight: normal;
+		margin: 0;
+		width: 100%;
+		padding-left: 50px;
+		font-size: 16px;
+        
+     
+}
+
+
+.main-container{
+    padding: 50px;
+    padding-bottom: 0px;
+    padding-top: 23px;
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+.mainHeading{
+    border-bottom:1px solid #f0642c;
+}
+
+.main-container .row{
+    padding-top: 30px;
+}
+
+.DashBoard{
+    position: relative;
+    display: inline-block;
+    float: left;
+    margin: 10px 30px;
+       width: calc(100% - 60px);
+}
+
+.DashBoard .box{
+    position: relative;
+   margin: 15px 0px;
+    padding: 25px;
+    cursor: pointer;
+    width: 100%;
+    color: white;
+}
+
+form , .contentArea{
+    padding: 20px 45px;
+}
+
+.row{
+    margin-bottom: 20px;
+}
+
+.row:last-of-type{
+    margin-bottom: 0px;
+}
+
+.btn-group .btn{
+    width: 180px;
+    margin-right: 20px;
+}
+
+.btn-group .btn:last-of-type{
+    margin-right: 0px;
+}
+
+.search-icon{
+   position: absolute;
+   top: 0%;
+   right: 15px;
+}
+
+#SearchAlias{
+       border-top-right-radius: 4px !Important;
+    border-bottom-right-radius: 4px !important;
+}
+
+
+
+.mainHeading {
+    color: #f0642c;
+    font-weight: normal;
+    margin: 0;
+    width: 100%;
+    padding: 15px 0px;
+        margin: 0px 45px;
+    width: calc(100% - 90px);
+    font-size: 18px;
+}
+
+.mainHeading {
+    border-bottom: 1px solid #f0642c;
+}
+
+#DirectDeposit{
+    background-color: #f34235;
+}
+
+#Transfer{
+background-color:#e81d62;
+}
+
+#Payments{
+    background-color:#9b26af;
+}
+
+#GiftVoucher{
+    background-color: #6639b6;
+}
+
+#Stores{
+    background-color: #3e50b4;
+}
+
+#MyTransactions{
+    background-color: #009587;
+}
+
+#Withdrawal{
+    background-color: #4bae4f;
+}
+
+#Wallet{
+    background-color: #463b6b;
+}
+
+.icon-container , .module-name {
+position: relative;
+display: inline-block;
+float: left;
+}
+
+.module-name {
+    width: calc(100% - 20px);
+    text-align: center;
+    margin-top: 0px;
+}
+
+.table{
+    margin-bottom: 0px;
+}
+
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{
+    padding: 14px;
+}
+
+
+@media all and (max-width: 480px) {
+
+    #SuccessMessage , #FailMessage{
+        font-size: 10.5px;
+}
+
+    .table{
+    font-size: 8px;
+}
+
+    .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{
+    padding: 8px;
+}
+
+    form .col-xs-6 {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .form-control , .form-label{
+        font-size: 10.5px;
+    }
+
+     button.col-xs-12:not(:first-child){
+        margin-bottom: 5px;
+    }
+
+    
+
+     .search-icon{
+        right: 0% !important;
+    }
+
+     input.form-control{
+        margin-top: 5px;
+    height: 29px;
+}
+
+     .btn#SearchAlias{
+         padding: 3.5px 10px;
+     }
+
+}
+
+@media all and (max-width: 768px){
+
+   
+
+    .accordionTitle{
+         margin-top: -10px !important;
+    margin-left: -10px !important;
+    width: calc(100% + 20px) !important;
+    }
+
+    label {
+        font-weight: 400;
+    }
+
+
+
+    .underline-row {
+        position: relative;
+    display: block;
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #d6d6d6;
+}
+
+  
+
+    .col-sm-4.col-xs-6{
+        padding-bottom:0px;
+    }
+
+    .row{
+        margin-bottom: 0px;
+    }
+
+    
+
+    .search-icon{
+        right: 15px;
+        top: 5px;
+    }
+  
+
+    .dasboard-icon{
+        height: 15px;
+    width: 14px;
+    margin-top: 1.4em;
+    margin-left: 0.4em;
+    }
+
+    .mainHeading{
+    padding: 15px 0px;
+    margin: 0px 25px;
+    width: calc(100% - 50px);
+    font-size: 18px;
+    }
+
+    form{
+    margin: 25px 25px !important;
+    padding: 10px !important;
+    }
+
+    
+
+    .form-control {
+    padding: 10px 6px;
+}
+
+    .form-label {
+    padding: 10px 6px;
+    height: auto;
+}
+
+    
+.form-label{
+    padding-top: 10px !important;
+    height:auto;
+}
+
+input.form-control{
+ margin-top: 5px;
+}
+
+
+
+    .row .col-sm-4{
+      
+    }
+
+    .tab-container{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .DashBoard{
+        margin: 10px 10px;
+        width: auto;
+    }
+
+    .icon-container{
+   width: 100%;
+   height: 30px;
+    }
+
+    .module-name{
+        width: 100%;
+        margin-top: 10px;
+
+    }
+
+    
+
+    .DashBoard .box {
+        font-size: 8px;
+        text-align: center;
+        padding: 10px; 
+   margin: 10px 0px;
+    }
+
+    .btn-group .btn{
+    margin-right: 0px;
+    width: 100%;
+}
+
+    .btn-group button:not(:first-child) {
+       margin-top: 10px;
+    }
+
+    
+
+
+     .btn-group .btn:last-of-type{
+    margin-bottom: 0px;
+}
+
+    .btn-group{
+        width: 100%;
+    }
+
+    .DashBoard .box span.icon{
+        height: 40px;
+        width: 40px;
+        margin: 0px !important;
+        display: inline-block;
+        float: none !important;
+    }
+
+}
+
+
+.DashBoard .box span.icon{
+     height: 30px;
+    width: 30px;
+    background-size: 100%;
+    position: relative;
+    float: left;
+    margin: -5px;
+}
+
+.icon-deposit {
+    background: url("../images/icon_Db_iconDeposit.png") no-repeat center center;
+}
+
+.icon-transfer{
+        background: url("../images/icon_Db_iconTransfer.png") no-repeat center center;
+}
+
+.icon-payments{
+            background: url("../images/icon_Db_iconPayment.png") no-repeat center center;
+}
+
+.icon-giftvoucher{
+                background: url("../images/icon_Db_iconGiftVoucher.png") no-repeat center center;
+}
+
+.icon-stores{
+                    background: url("../images/icon_Db_iconStore.png") no-repeat center center;
+}
+
+.icon-transaction{
+                        background: url("../images/icon_Db_iconTransaction.png") no-repeat center center;
+}
+
+.icon-cardless{
+                            background: url("../images/icon_Db_iconCardless.png") no-repeat center center;
+}
+
+.icon-wallet{
+                                background: url("../images/icon_Db_iconWallet.png") no-repeat center center;
+
+}
+
+button{
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+}
+
+.field-label{
+    color: darkcyan;
+    margin-left: 12.5px;
+}
+
+.field-value{
+    line-height: 31px;
+    font-weight: 600;
+}
+
+.row:last-of-type .underline-row:last-of-type{
+    border-bottom: none !important;
+}
+
+.loader{
+     background: url("../../assets/img/spinner.gif") no-repeat center center;
+     background-size: 100%;
+     position: absolute;
+     display: inline-block;
+     height: 20px;
+     width: 20px;
+     left: 27%;
+}
+
+.contentArea{
+
+}
+
+.accordionTitle {
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    background-color: #595959;
+    border-bottom: 1px solid #ddd;
+ 
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+       margin-top: -20px;
+    margin-left: -20px;
+    width: calc(100% + 40px);
+}
+
+
+fieldset.accordion .row{
+    /*border-bottom: 1px solid #bec6ca;*/
+}
+
+fieldset.accordion .row:last-of-type{
+    border-bottom: none;
+}
+
+fieldset.accordion label.form-control{
+        background-color: transparent;
+    border: none;
+    box-shadow: none;
+    font-weight: 600;
+}
+
+.row{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.form-label{
+    padding-top: 5px;
+}
+
+.accordion-container{
+    margin-bottom: 20px;
+    
+        /*background-color: white;
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);*/
+}
+
+form{
+     margin-bottom: 20px;
+    
+        background-color: white;
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+        margin: 25px 45px;
+        padding: 20px;
+
+}
+
+label.form-control{
+    color:#3cba54;
+    box-shadow: none;
+    border: none;
+}
+
+label.error-container{
+          width: 100%;
+ background-color:dodgerblue;
+    padding: 10px;
+    text-align: center;
+
+}
+
+.close-icon{
+        float: right;
+    position: relative;
+    display: inline-block;
+    right: 2.5%;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus
+input:-webkit-autofill, 
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus{
+    background-color: transparent !important;
+}
+
+
+#SuccessMessage , #FailMessage{
+        width: 100%;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+
+
+    @media all and (max-width:480px){
+        #lblSearchMessage{
+           font-size: 10.5px !important;
+           margin-left: 7px !important;
+        }
+    }
+
+    #lblSearchMessage {
+        margin-left: 7px !important;
+    }
+
+            /* Start by setting display:none to make this hidden.
+   Then we position it in relation to the viewport window
+   with position:fixed. Width, height, top and left speak
+   for themselves. Background we set to 80% white with
+   our animation centered, and no-repeating */
+.modal {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 ) 
+                url('../images/ripple.gif') 
+                50% 50% 
+                no-repeat;
+
+  
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading {
+    overflow: hidden;   
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .modal {
+    display: block;
+}

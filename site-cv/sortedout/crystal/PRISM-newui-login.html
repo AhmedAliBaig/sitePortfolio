@@ -1,0 +1,78 @@
+
+<script type="text/javascript">
+
+
+</script>
+
+<html>
+<head>
+
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Login | Funky Factory</title>
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/PRISM-newui-login-style.css" />
+
+</head>
+
+<body>
+
+    <div class="logo-content">
+        <div id="logo"></div>
+        <div class="links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Security Information</a>
+        </div>
+    </div>
+
+    <div class="content" id="login-div">
+        <form id="loginForm">
+        
+            <div class="mat-in">
+                <input type="text" name="customername" value="" required></input>
+                <span class="bar"></span>
+                <label>User Name</label>
+            </div>
+            <div class="mat-in">
+                <input type="password" name="password" value="" required></input>
+                <span class="bar"></span>
+                <label>Password</label>
+            </div>
+         
+            <div class="mat-in login-button-container">
+                <button class="login" type="button" onclick="login()" name="OTPVerifBtn1" id="OTPVerifBtn" value="Next">Login</button>
+            </div>
+            <div class="mat-in" style="text-align:center">
+               <a id="forgot-pwd" href="#">Forgot Your Password?</a>
+            </div>
+        </form>
+    </div>
+
+    
+
+</body>
+
+
+</html>
+<style type="text/css">
+	 body{
+         overflow: hidden;
+	 }
+   
+
+</style>
+
+<script>
+    
+    function login(){
+                    location.href = "DashBoard.html";
+    }
+
+</script>

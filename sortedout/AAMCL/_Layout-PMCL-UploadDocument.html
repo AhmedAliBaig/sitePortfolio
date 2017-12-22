@@ -1,0 +1,456 @@
+<html>
+
+<head>
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/layout-functions.js"></script>
+
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700'>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/layout-style.css" />
+    <link rel="stylesheet" href="css/color-style.css" />
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+    <link rel='stylesheet' type='text/css' href="font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" />
+
+</head>
+
+<body>
+	<div class="header-div">
+        <div class="logo-container">
+            <span id="prism-logo"></span>
+        </div>
+        <div class="hamburger-container">
+            <span id="hamburger"></span>
+        </div>
+        <div class="polygon-backdrop">
+            <div class="row" id="search">
+                <div class="col-sm-12">
+                    <input class="form-control" placeholder="Search" type="text" />
+                    <span class="search-icon"></span>
+                </div>
+            </div>
+
+            <div class="user-credentials-container in-header">
+                <div class="img-container">
+
+                </div>
+                <div class="name-container">
+                    <span class="user-name">Ahmed Saleem</span>
+                    <div class="last-axx">
+                        <span class="last-login">Last Access:</span>
+                        <span class="date">16 May, 2016</span>
+                        <span>|</span>
+                        <span class="time">11:45 PM</span>
+                    </div>
+                </div>
+                <span id="logout-now" class="logout" title="Log Out"></span>
+            </div>
+
+
+        <div class="header-controls"></div>
+            </div>
+    </div>
+
+    <div class="main-menu-container"></div>
+    
+    <div class="main-menu">
+
+
+
+        <ul class="menu-item-container">
+            <li class="module ">
+                <div class="icon"><span class="navItem_Icon item-APIIntegration"></span></div>
+                <a class="name" href="_Layout-PMCL-ApiIntegration.html">Developer's Guide</a>
+            </li>
+            <li class="module ">
+                <div class="icon"><span class="navItem_Icon item-TestTransaction "></span></div>
+                <a class="name" href="_Layout-PMCL-TestingPortal.html">Test</a>
+            </li>
+
+
+            <li class="module selected">
+                <div class="icon"><span class="navItem_Icon item-UploadDocuments"></span></div>
+                <a class="name" href="_Layout-PMCL-UploadDocument.html">Upload Documents</a>
+            </li>
+
+            <li class="module">
+                <div class="icon"><span class="navItem_Icon item-Tariff"></span></div>
+                <a class="name" href="_Layout-PMCL-Tarriffs.html">Tariff</a>
+            </li>
+            <li class="module">
+                <div class="icon"><span class="navItem_Icon item-FAQ"></span></div>
+                <a class="name" href="_Layout-PMCL-FAQs.html">FAQs</a>
+            </li>
+            <li class="module">
+                <div class="icon"><span class="navItem_Icon item-MERCH"></span></div>
+                <a class="name" href="_Layout-PMCL-MerchantPortal.html">Merchant Portal</a>
+            </li>
+        </ul>
+
+    </div>
+    
+
+    <div class="content-area">
+        <div class="card-layout">
+
+            <div class="cover-image generic uploadDocuments">
+
+                <div class="content-box">
+                    <span class="fa fa-arrow-circle-up"></span>
+                    <div class="headings">
+                        <h1>Upload Document</h1>
+                        <h2>Select and monitor the status of documents you upload</h2>
+                    </div>
+                </div>
+            </div>
+         
+            <div class="container-content">
+
+                <div class="checkbox">
+                    <label for="sel1">Document Required</label>
+                    <select class="form-control" id="sel1">
+                        <option>Induviduals</option>
+                        <option>Sole Proprietor</option>
+                        <option>Partnership</option>
+                        <option>Public and Private Limited Companies</option>
+                        <option>Trusts, Club, Societies & Associations</option>
+                        <option>NGOs/NPOs/Charities</option>
+                        <option>Government/ Municipal/ Local Authorities Accounts</option>
+                    </select>
+                </div>
+               
+                <div class="content-container">
+                    <div class="row-fluid">
+                        <div class="panel panel-default panel-adj">
+                            <div class="panel-heading panel-adj">
+                                <h4>
+                                   Documents
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table id="UploadStatusGrid" class="table table-hover table-fixedheader table-striped">
+                            <thead>
+                                <tr>
+
+                                    <th>Document Name</th>
+
+                                    <th style="width: 5em;text-align: center;">Upload Status</th>
+
+                                    <th style="width: 7em;text-align:center;">Approval Status</th>
+
+                                    <th style="width:6em">Action</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Computerized National Identity Card (CNIC) issued by NADRA</td>
+                             
+                                    <td><button class="btn btn-primary">Upload</button></td>
+
+                                    <td></td>
+
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <td>National Identity Card for Overseas Pakistani (NICOP) issued by NADRA</td>
+                                   
+                                    <td><span class="18em"></span></td>
+
+                                    <td><span class="pending-icon"></span></td>
+
+                                    <td><span class="view-icon"></span><span class="delete-icon"></span></td>
+
+                                </tr>
+
+                                <tr>
+                                    <td>Pakistan Origin Card (POC) issued by NADRA</td>
+                                   
+                                    <td><span class="grid-success"></span></td>
+
+                                    <td> <span class="grid-fail"></span> </td>
+
+                                    <td><span class="view-icon"></span><span class="delete-icon"></span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Alien Registration Card (ARC) issued by National Aliens Registration Authority (NARA), Ministry of Interior (local currency account only)</td>
+                                   
+                                    <td><span class="grid-success"></span></td>
+
+                                    <td> <span class="grid-success"></span> </td>
+
+                                    <td><span class="view-icon"></span><span class="delete-icon"></span></td>
+
+
+                                </tr>
+
+
+                                <tr>
+                                    <td>Passport; having valid visa on it or any other proof of legal stay along with passport (foreign national individuals only)</td>
+                                   
+                                    <td><span class="grid-success"></span></td>
+
+                                    <td> <span class="grid-success"></span> </td>
+
+                                    <td><span class="view-icon"></span><span class="delete-icon"></span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>From	Subject	Received Size Categories Adeel Siddiqui	RE: PMCL-PAK-16-04 - PGW Phase 2	Mon 2:48 PM	105 KB</td>
+                                   
+                                    <td><span class="grid-success"></span></td>
+
+                                    <td> <span class="grid-success"></span> </td>
+
+                                    <td><span class="view-icon"></span><span class="delete-icon"></span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>From	Subject	Received Size Categories Adeel Siddiqui	RE: PMCL-PAK-16-04 - PGW Phase 2	Mon 2:48 PM	105 KB</td>
+
+                                    <td><span class="grid-success"></span></td>
+
+                                    <td> <span class="grid-success"></span> </td>
+
+                                    <td><span class="view-icon"></span><span class="delete-icon"></span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>From	Subject	Received Size Categories Adeel Siddiqui	RE: PMCL-PAK-16-04 - PGW Phase 2	Mon 2:48 PM	105 KB</td>
+
+                                    <td><span class="grid-success"></span></td>
+
+                                    <td> <span class="grid-success"></span> </td>
+
+                                    <td><span class="view-icon"></span><span class="delete-icon"></span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>From	Subject	Received Size Categories Adeel Siddiqui	RE: PMCL-PAK-16-04 - PGW Phase 2	Mon 2:48 PM	105 KB</td>
+
+                                    <td><span class="grid-success"></span></td>
+
+                                    <td> <span class="grid-success"></span> </td>
+
+                                    <td><span class="view-icon"></span><span class="delete-icon"></span></td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+              
+
+            </div>
+
+          
+
+
+           
+
+        </div>
+    </div>
+
+    <div class="cert-successful-container-screen hide"></div>
+    <div id="ViewWindow" class="cert-successful-container hide">
+        <h1>Your Document</h1>
+        <img src="images/dummy-us-visa.png" />
+        <span class="close-icon"></span>
+    </div>
+
+    <div id="ReasonWindow" class="cert-successful-container hide">
+        <form class="document-validation">
+            <fieldset>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label>Reason</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input class="form-control" type="text" disabled/>
+                    </div>
+
+                </div>
+                <hr />
+                <div class="buttons-container">
+                    <button class="btn btn-primary">Ok</button>
+                </div>
+            </fieldset>
+        </form>
+        <span class="close-icon"></span>
+    </div>
+
+    <div id="ViewWindow" class="cert-successful-container hide">
+        <form class="document-validation">
+            <fieldset>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label>Reason</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input class="form-control" type="text" disabled />
+                    </div>
+
+                </div>
+                <hr />
+                <div class="buttons-container">
+                    <button class="btn btn-primary">Ok</button>
+                </div>
+            </fieldset>
+        </form>
+        <span class="close-icon"></span>
+    </div>
+
+</body>
+
+
+</html>
+<style type="text/css">
+
+
+
+    #UploadStatusGrid button{
+        font-size: 10px;
+    }
+
+
+    .cert-successful-container img{
+            height: auto;
+    max-width: 750px;
+    max-height: 400px;
+    position: relative;
+    display: inline-block;
+    }
+
+    .cert-successful-container{
+        width: 800px;
+    }
+
+     .cert-successful-container h1{
+         margin-top: 0px;
+     }
+
+    div.checkbox{
+        text-align: left;
+    margin-bottom: 20px;
+    margin-top: 0px;
+    }
+
+        div.checkbox label {
+       margin-right: 50px;
+             }
+
+        div.checkbox .form-control{
+            width: 283px;
+    display: inline-block;
+        }
+
+    .main-menu{
+
+    }
+
+
+
+
+    .collapse {
+        transition: 1s;
+    }
+
+    #UploadStatusGrid .loader, #UploadStatusGrid .grid-fail, #UploadStatusGrid .grid-success{
+        margin-left: 2em;
+    }
+
+</style>
+
+<script>
+
+    $(document).ready(function () {
+        var x = $(".content-area").height()
+        $(".main-menu").css("height", x);
+    });
+
+    $("#prism-logo").on("click", function () {
+        location.href = "_Layout-PMCL-GettingStarted.html";
+    });
+
+    $("#logout-now").on("click", function () {
+        location.href = "_Layout-PMCL-Index.html";
+    });
+
+    $(document).ready(function () {
+        $(".view-icon").attr("title", "View");
+        $(".delete-icon").attr("title", "Delete");
+   
+    });
+
+    $(".grid-fail").on("click", function () {
+        viewReason();
+    });
+
+    $(".view-icon").on("click", function () {
+        viewDocument();
+    });
+
+    function viewReason() {
+        $(".cert-successful-container-screen").removeClass("hide");
+        $("#ReasonWindow").removeClass("hide");
+    }
+
+    function viewDocument() {
+
+
+        $(".cert-successful-container-screen").removeClass("hide");
+        $("#ViewWindow").removeClass("hide");
+    }
+
+    $(".cert-successful-container-screen , .close-icon").on("click", function () {
+
+
+        if (!$(".cert-successful-container-screen").hasClass("hide")) {
+            $(".cert-successful-container-screen").addClass("hide");
+            $(".cert-successful-container").addClass("hide");
+        }
+
+    });
+
+
+    $(".hamburger-container").on("click", function () {
+
+
+        if ($(".main-menu").hasClass("collapse")) {
+
+           
+            setTimeout(function () {
+                $(".main-menu").removeClass("collapse");
+            }, 200);
+
+            $(".content-area").removeClass("expanded");
+
+
+        
+        }
+
+        else {
+
+            setTimeout(function () {
+                $(".content-area").addClass("expanded");
+            }, 200);
+
+            $(".main-menu").addClass("collapse");
+
+ 
+        }
+    });
+
+    //$('#hamburger').click(function () {
+        //$('.main-menu').fadeOut(1000);
+    //})
+</script>

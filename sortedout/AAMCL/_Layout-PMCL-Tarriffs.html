@@ -1,0 +1,347 @@
+<html>
+
+<head>
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/layout-functions.js"></script>
+
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700'>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/layout-style.css" />
+    <link rel="stylesheet" href="css/color-style.css" />
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+    <link rel='stylesheet' type='text/css' href="font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" />
+
+</head>
+
+<body>
+	<div class="header-div">
+        <div class="logo-container">
+            <span id="prism-logo"></span>
+        </div>
+        <div class="hamburger-container">
+            <span id="hamburger"></span>
+        </div>
+        <div class="polygon-backdrop">
+            <div class="row" id="search">
+                <div class="col-sm-12">
+                    <input class="form-control" placeholder="Search" type="text" />
+                    <span class="search-icon"></span>
+                </div>
+            </div>
+
+            <div class="user-credentials-container in-header">
+                <div class="img-container">
+
+                </div>
+                <div class="name-container">
+                    <span class="user-name">Ahmed Saleem</span>
+                    <div class="last-axx">
+                        <span class="last-login">Last Access:</span>
+                        <span class="date">16 May, 2016</span>
+                        <span>|</span>
+                        <span class="time">11:45 PM</span>
+                    </div>
+                </div>
+                <span id="logout-now" class="logout" title="Log Out"></span>
+            </div>
+
+
+        <div class="header-controls"></div>
+            </div>
+    </div>
+
+    <div class="main-menu">
+
+
+
+        <ul class="menu-item-container">
+            <li class="module ">
+                <div class="icon"><span class="navItem_Icon item-APIIntegration"></span></div>
+                <a class="name" href="_Layout-PMCL-ApiIntegration.html">Developer's Guide</a>
+            </li>
+            <li class="module ">
+                <div class="icon"><span class="navItem_Icon item-TestTransaction "></span></div>
+                <a class="name" href="_Layout-PMCL-TestingPortal.html">Test</a>
+            </li>
+
+
+            <li class="module">
+                <div class="icon"><span class="navItem_Icon item-UploadDocuments"></span></div>
+                <a class="name" href="_Layout-PMCL-UploadDocument.html">Upload Documents</a>
+            </li>
+
+            <li class="module selected">
+                <div class="icon"><span class="navItem_Icon item-Tariff"></span></div>
+                <a class="name" href="_Layout-PMCL-Tarriffs.html">Tariff</a>
+            </li>
+            <li class="module">
+                <div class="icon"><span class="navItem_Icon item-FAQ"></span></div>
+                <a class="name" href="_Layout-PMCL-FAQs.html">FAQs</a>
+            </li>
+            <li class="module">
+                <div class="icon"><span class="navItem_Icon item-MERCH"></span></div>
+                <a class="name" href="_Layout-PMCL-MerchantPortal.html">Merchant Portal</a>
+            </li>
+        </ul>
+
+    </div>
+    
+    
+    <div class="content-area">
+        <div class="card-layout">
+
+
+            <div class="cover-image generic tarrifs">
+
+                <div class="content-box">
+                    <span class="fa fa-map-o"></span>
+                    <div class="headings">
+                        <h1>Tarriffs</h1>
+                        <h2>Select the features of test platforms</h2>
+                    </div>
+                </div>
+            </div>
+         
+            <div class="container-content">
+
+                <div class="api-tarrifs-container">
+
+                    <div class="one-third-container">
+                        <div class="row-fluid">
+                            <div class="tarrif-icon tarrif-starter"></div>
+                            <div class="panel panel-default panel-adj">
+                                <div class="panel-heading panel-adj">
+                                    <h4>
+                                        Wallet
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="table-container">
+                            <table id="TransactionList" class="table table-hover table-fixedheader table-striped">
+                                <tbody>
+                                    <tr>
+                                        <td class="icon-grid"><span class="grid-success"></span></td>
+                                        <td>100 Transactions/Month</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="icon-grid"><span class="grid-fail"></span></td>
+                                        <td>SSL Script</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="icon-grid"><span class="grid-fail"></span></td>
+                                        <td>Over Quota</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="icon-grid"><span class="grid-success"></span></td>
+                                        <td>Transaction Amount Limit 5000</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="icon-grid"><span class="grid-success"></span></td>
+                                        <td>Union Pay Card Supported Only</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="icon-grid"><span class="grid-success"></span></td>
+                                        <td>24/7 Live Support</td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                    <div class="one-third-container">
+                        <div class="row-fluid">
+                            <div class="tarrif-icon tarrif-professional"></div>
+                            <div class="panel panel-default panel-adj">
+                                <div class="panel-heading panel-adj">
+                                    <h4>
+                                        Mobile Account
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="table-container">
+                            <table id="TransactionList" class="table table-hover table-fixedheader table-striped">
+                                <tbody>
+                                    <tr>
+                                        <td class="icon-grid"><span class="grid-success"></span></td>
+                                        <td>500 Transactions/Month</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="icon-grid"><span class="grid-success"></span></td>
+                                        <td>SSL Script</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="icon-grid"><span class="grid-success"></span></td>
+                                        <td>Upto 100 Transactions Quota</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="icon-grid"><span class="grid-success"></span></td>
+                                        <td>Transaction Amount Limit 50,000</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="icon-grid"><span class="grid-success"></span></td>
+                                        <td>VISA, Mastercard Cards Supported</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="icon-grid"><span class="grid-success"></span></td>
+                                        <td>24/7 Live Support</td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                    <div class="one-third-container">
+                        <div class="row-fluid">
+                            <div class="tarrif-icon tarrif-enterprise"></div>
+                            <div class="panel panel-default panel-adj">
+                                <div class="panel-heading panel-adj">
+                                    <h4>
+                                        Card
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="table-container">
+                            <table id="TransactionList" class="table table-hover table-fixedheader table-striped">
+                                <tbody>
+                                    <tr>
+                                        <td class="icon-grid"><span class="grid-success"></span></td>
+                                        <td>3000 Transactions/Month</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="icon-grid"><span class="grid-success"></span></td>
+                                        <td>SSL/TLS Script</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="icon-grid"><span class="grid-success"></span></td>
+                                        <td>Upto 550 Transactions Quota</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="icon-grid"><span class="grid-success"></span></td>
+                                        <td>Unlimited Transaction Amount Limit</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="icon-grid"><span class="grid-success"></span></td>
+                                        <td>VISA, Mastercard, PayPal Cards Supported</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="icon-grid"><span class="grid-success"></span></td>
+                                        <td>24/7 Live Support</td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+                
+
+                
+
+            </div>
+
+          
+
+
+           
+
+        </div>
+    </div>
+</body>
+
+
+</html>
+<style type="text/css">
+
+    .main-menu{
+
+    }
+
+
+
+
+    .collapse {
+        transition: 1s;
+    }
+</style>
+
+<script>
+
+    $(document).ready(function () {
+        var x = $(".content-area").height()
+        $(".main-menu").css("height", x);
+    });
+
+    
+
+    $("#prism-logo").on("click", function () {
+        location.href = "_Layout-PMCL-GettingStarted.html";
+    });
+
+    $("#logout-now").on("click", function () {
+        location.href = "_Layout-PMCL-Index.html";
+    });
+
+    $(".hamburger-container").on("click", function () {
+
+
+        if ($(".main-menu").hasClass("collapse")) {
+
+           
+            setTimeout(function () {
+                $(".main-menu").removeClass("collapse");
+            }, 200);
+
+            $(".content-area").removeClass("expanded");
+
+
+        
+        }
+
+        else {
+
+            setTimeout(function () {
+                $(".content-area").addClass("expanded");
+            }, 200);
+
+            $(".main-menu").addClass("collapse");
+
+ 
+        }
+    });
+
+    //$('#hamburger').click(function () {
+        //$('.main-menu').fadeOut(1000);
+    //})
+</script>

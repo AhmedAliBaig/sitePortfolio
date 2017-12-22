@@ -1,0 +1,267 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ 
+
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>My Transaction | Funky Factory</title>
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/my-style.css"/>
+
+
+    <script src="jquery.min.js"></script>
+     <style>
+
+          @media all and (max-width: 480px) {
+
+
+       .fixit .col-sm-2.col-xs-6{
+            width: 30%;
+        }
+
+       .fixit .col-sm-4.col-xs-6{
+            width: 70%;
+        }
+
+         .fixit select.form-control {
+                 padding: 10px 6px;
+             }
+
+    }
+
+         @media all and (max-width: 768px) {
+             .fixit select.form-control {
+                 padding: 5px 6px;
+             }
+         }
+
+         #lblMessage{
+             color: white;
+    background-color: green;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+         }
+
+
+    </style>
+</head>
+<body>
+    
+    <a onclick="Menu()" title="Return To Dashboard"><span class="dasboard-icon"></span></a>
+    <div class="mainHeading">My Transactions</div>
+    <a onclick="LogOut()" title="Logout"><span class="logout-icon"></span></a>
+
+
+    <div class="alert alert-success" style="display:none" role="alert" id="SuccessMessage"></div>
+
+    <div class="alert alert-danger" style="display:none" role="alert" id="FailMessage"></div>
+
+
+    <form>
+        <fieldset>
+            <div class="row fixit">
+                <div class="underline-row">
+                    <div class="col-sm-2 col-xs-6">
+                        <label class="form-label">Account</label>
+                    </div>
+                    <div class="col-sm-4 col-xs-6">
+                        <select class="form-control" id="ddlAccounts"></select>
+                    </div>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+
+
+    <form>
+    <div id="TransactionTable"></div>
+        </form>
+    <script>
+
+        function LogOut() {
+            location.href = "PRISM-newui-login.html";
+        }
+
+        function Menu() {
+            location.href = "DashBoard.html";
+        }
+
+        $(document).ready(function () {
+            GetWalletID(sessionStorage.getItem("Alias"));
+            $("#ddlAccounts").change(function (e) {
+                $("#TransactionTable").html("");
+                fetchTransactions($("#ddlAccounts").val().toString().trim());
+            });
+           
+        });
+        function fetchTransactions(inAccountID)
+        {
+            $.ajax({
+                type: "POST",
+                url: "http://192.168.64.10:8123/api/v1/Customers/Transactions/" + sessionStorage.getItem("Alias") + "/Account/" + inAccountID + "/Transaction/-1/-1/-1/1/5/?LicenseKey=A394F15662BE309&IsApplication=0&UserName=" + sessionStorage.getItem('UserID') + "&Password=" + sessionStorage.getItem('Password') + "&SessionID=" + sessionStorage.getItem('SessionID'),
+
+                beforeSend: function (request) {
+
+                    request.setRequestHeader("Authorization", "Bearer 9cd19f21-932f-4b02-b26d-ded9eed66842");
+                    request.setRequestHeader("LicenseKey", "A394F15662BE3095C4D7B51F43EAEC9ACAB6A080");
+                },
+                dataType: 'json',
+                crossDomain: true,
+                contentType: "application/json; charset=utf-8",
+                error: function (request, status, error) {
+                },
+
+                success: function (response) {
+                    var FormattedAmount;
+                    console.log(response);
+                    if (response.ResponseCode == "1") {
+                        $("#SuccessMessage").css("display", "inline-block");
+                        $("#FailMessage").css("display", "none");
+                        $("#SuccessMessage").text(response.ReponseMessage);
+                    } else {
+                        $("#SuccessMessage").css("display", "none");
+                         $("#FailMessage").css("display", "inline-block");
+                         $("#FailMessage").text(response.ReponseMessage);
+                    }
+                    $("#lblMessage").text(response.ReponseMessage);
+                    //  $("#lblMessage").text(response.ReponseMessage);
+                    if (response.ResponseCode == "1") {
+                        var innerHtml = "";
+                        innerHtml += "<table class='table'><thead>" +
+                               "<tr>" +
+                                 
+                                   "<th>Date & Time</th>" +
+                                   "<th>Transaction</th>" +
+                                     "<th>Amount</th>" +
+                               "</tr>" +
+                           "</thead><tbody>";
+                        $.each(response.ResponseData.Instrument_Transactions, function (index, value) {
+                            if (value.AMOUNT != "0") {
+                                var length = value.AMOUNT.length - 2;
+                                FormattedAmount = 'PKR ' + value.AMOUNT.substr(0, length) + '.' + value.AMOUNT.substr(length, 2);
+                            }
+                            else {
+                                FormattedAmount = "PKR 0.00";
+                            }
+
+                            var formattedDateTime = value.Date.substr(6, 2) + "/" + value.Date.substr(4, 2) + "/" + value.Date.substr(0, 4) + " " + value.Time.substr(8, 2) + ":" + value.Time.substr(10, 2) + ":" + value.Time.substr(12, 2);
+                            innerHtml += "<tr>" +
+                                              
+
+                                                     "<td>" + formattedDateTime + "</td>" +
+                                                      "<td>" + value.Transaction + "</td>" +
+                                                        "<td>" + FormattedAmount + "</td>" +
+                                "</tr>";
+                        });
+
+                        innerHtml += "</tbody></table>";
+                        console.log(innerHtml);
+                        $("#TransactionTable").html(innerHtml);
+                    }
+                   
+                    //location.href = "CustomerRegistration.html";
+                }
+            });
+        }
+        function GetWalletID(CustomerID) {
+            $.ajax({
+                type: "GET",
+                url: "http://192.168.64.10:8123/api/v1/Customers/" + CustomerID + "/wallets?LicenseKey=A394F15662BE309&IsApplication=0&UserName=" + sessionStorage.getItem('UserID') + "&Password=" + sessionStorage.getItem('Password') + "&SessionID=" + sessionStorage.getItem('SessionID'),
+
+                beforeSend: function (request) {
+
+                    request.setRequestHeader("Authorization", "Bearer 9cd19f21-932f-4b02-b26d-ded9eed66842");
+                    request.setRequestHeader("LicenseKey", "A394F15662BE3095C4D7B51F43EAEC9ACAB6A080");
+                },
+                dataType: 'json',
+                crossDomain: true,
+                contentType: "application/json; charset=utf-8",
+                error: function (request, status, error) {
+                },
+
+                success: function (response) {
+                    console.log(response);
+                    //     alert("GetWalletID");
+                    console.log("GetWalletID");
+                    GetSVAs(response.ResponseData.WalletID);
+
+
+
+                    //location.href = "CustomerRegistration.html";
+                }
+            });
+        }
+
+        function GetSVAs(WalletID) {
+            $.ajax({
+                type: "GET",
+                url: "http://192.168.64.10:8123/api/v1/Customers/Wallet/" + WalletID + "/SVA?LicenseKey=LA1214545&IsApplication=0&UserName=" + sessionStorage.getItem('UserID') + "&Password=" + sessionStorage.getItem('Password') + "&SessionID=" + sessionStorage.getItem('SessionID'),
+
+                beforeSend: function (request) {
+
+                    request.setRequestHeader("Authorization", "Bearer 9cd19f21-932f-4b02-b26d-ded9eed66842");
+                    request.setRequestHeader("LicenseKey", "A394F15662BE3095C4D7B51F43EAEC9ACAB6A080");
+                },
+                dataType: 'json',
+                crossDomain: true,
+                contentType: "application/json; charset=utf-8",
+                error: function (request, status, error) {
+                },
+
+                success: function (response) {
+                    //      alert("GetSVAs");
+                    console.log("GetSVAs");
+                    console.log(response);
+                    //console.log(response.ResponseData["SVA Detail"][0].IsDefault);
+                    //console.log(response.ResponseData["SVA Detail"][0].accounts.AccountID);
+                    //$.each(response.ResponseData["SVA Detail"], function (index, value) {
+                    //    if (value.IsDefault == '1') {
+                    //        sessionStorage.setItem('DefaultSVA', value.accounts.AccountID);
+                    //        sessionStorage.setItem('DefaultAcctCurrency', value.accounts.AccountCurrency);
+                    //        sessionStorage.setItem('DefaultAcctType', value.accounts.AccountType);
+                    //        sessionStorage.setItem('AvailableBalance', value.accounts.AvailableBalance);
+
+                    //    }
+                    //    if (value.Type == "External") {
+                    //        sessionStorage.setItem('ExternalSVA', value.accounts.AccountID);
+                    //        sessionStorage.setItem('ExternalAcctCurrency', value.accounts.AccountCurrency);
+                    //        sessionStorage.setItem('ExternalAcctType', value.accounts.AccountType);
+                    //    }
+                    //});
+                    var ddlHtml = "<option value='-1'>View All</option>";
+                    $.each(response.ResponseData["SVA Detail"], function (index, value) {
+                        if (value.IsDefault == '1') {
+                            ddlHtml += "<option value='" + value.accounts.AccountID + "'>" + value.accounts.AccountID.toString().trim() +"-"+"Default"+ "</option>";
+                        }
+                        else {
+                            ddlHtml += "<option value='" + value.accounts.AccountID + "'>" + value.accounts.AccountID.toString().trim() + "</option>";
+                        }
+                    });
+                    $("#ddlAccounts").html(ddlHtml);
+                    fetchTransactions($("#ddlAccounts").val().toString().trim());
+
+                    //location.href = "CustomerRegistration.html";
+                }
+            });
+        }
+        $body = $("body");
+
+        $(document).on({
+            ajaxStart: function () { $body.addClass("loading"); },
+            ajaxStop: function () { $body.removeClass("loading"); }
+        });
+
+    </script>
+     <div class="modal"><!-- Place at bottom of page --></div>
+</body>
+</html>

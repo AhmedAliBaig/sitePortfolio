@@ -1,0 +1,402 @@
+<html>
+
+<head>
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/layout-functions.js"></script>
+
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700'>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/layout-style.css" />
+    <link rel="stylesheet" href="css/color-style.css" />
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+    <link rel='stylesheet' type='text/css' href="font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" />
+
+</head>
+
+<body>
+	<div class="header-div">
+        <div class="logo-container">
+            <span id="prism-logo"></span>
+        </div>
+        <div class="hamburger-container">
+            <span id="hamburger"></span>
+        </div>
+        <div class="polygon-backdrop">
+            <div class="row" id="search">
+                <div class="col-sm-12">
+                    <input class="form-control" placeholder="Search" type="text" />
+                    <span class="search-icon"></span>
+                </div>
+            </div>
+
+            <div class="user-credentials-container in-header">
+                <div class="img-container">
+
+                </div>
+                <div class="name-container">
+                    <span class="user-name">Ahmed Saleem</span>
+                    <div class="last-axx">
+                        <span class="last-login">Last Access:</span>
+                        <span class="date">16 May, 2016</span>
+                        <span>|</span>
+                        <span class="time">11:45 PM</span>
+                    </div>
+                </div>
+                <span id="logout-now" class="logout" title="Log Out"></span>           
+             </div>
+
+
+        <div class="header-controls"></div>
+            </div>
+    </div>
+
+    <div class="main-menu">
+
+
+
+        <ul class="menu-item-container">
+            <li class="module ">
+                <div class="icon"><span class="navItem_Icon item-APIIntegration"></span></div>
+                <a class="name" href="_Layout-PMCL-ApiIntegration.html">Developer's Guide</a>
+            </li>
+            <li class="module selected" >
+                <div class="icon"><span class="navItem_Icon item-TestTransaction "></span></div>
+                <a class="name" href="_Layout-PMCL-TestingPortal.html">Test</a>
+            </li>
+      
+
+            <li class="module">
+                <div class="icon"><span class="navItem_Icon item-UploadDocuments"></span></div>
+                <a class="name" href="_Layout-PMCL-UploadDocument.html">Upload Documents</a>
+            </li>
+
+            <li class="module">
+                <div class="icon"><span class="navItem_Icon item-Tariff"></span></div>
+                <a class="name" href="_Layout-PMCL-Tarriffs.html">Tariff</a>
+            </li>
+            <li class="module">
+                <div class="icon"><span class="navItem_Icon item-FAQ"></span></div>
+                <a class="name" href="_Layout-PMCL-FAQs.html">FAQs</a>
+            </li>
+            <li class="module">
+                <div class="icon"><span class="navItem_Icon item-MERCH"></span></div>
+                <a class="name" href="_Layout-PMCL-MerchantPortal.html">Merchant Portal</a>
+            </li>
+        </ul>
+
+    </div>
+    
+
+    <div class="content-area">
+        <div class="card-layout">
+
+            <div class="step-guide">
+                <span class="number" onclick="gotToStep1()">
+                    <span class="head">
+                    Step <span class="numbered">1</span>
+                         
+                    </span>
+                    <br />
+                    <span class="body-desc">Transaction &#38; Instrument</span>
+                </span>
+                <hr />
+                <span class="number" onclick="gotToStep2()">
+                    <span class="head">
+                       Step <span class="numbered">2</span>
+                    </span>
+               
+                 <span class="body-desc">Api Testing</span>
+                    </span>
+                <hr />
+                <span class="number active">
+                <span class="head">
+                    Step <span class="numbered">3</span><br />
+                    <span class="head-desc">Select Mode</span>
+                </span>
+                </span>
+            </div>
+
+         
+            <div class="container-content with-steps">
+
+                <div class="cover-image generic testingCode">
+
+                    <div class="content-box">
+                        <span class="fa fa-code"></span>
+                        <div class="headings">
+                        <h1>Testing Code</h1>
+                        <h2>Enter the sample code to initiate a Test.</h2>
+                        </div>
+                        </div>
+                </div>
+
+                <div class="row-fluid">
+
+                    <div class="mainHeading">Sample Code</div>
+                    <div class="left-half-container">
+                    <div class="box-seperator hide">
+                        <h2>Select Instrument</h2>
+                        <div id="test-wallet" class="api-cont">
+                            <span class="api"></span>
+                            <span class="label">Wallet API</span>
+                        </div>
+                        <div id="test-voucher" class="api-cont">
+                            <span class="api"></span>
+                            <span class="label">Voucher</span>
+                        </div>
+                        <div id="test-status" class="api-cont">
+                            <span class="api"></span>
+                            <span class="label">Status Inquiry</span>
+                        </div>
+                    </div>
+
+                        <div class="form-group">
+                            <label for="sel1">Select Mode:</label>
+                            <select class="form-control" id="selectInst">
+                                <option value="1">Wallet API</option>
+                                <option value="2">Voucher</option>
+                                <option value="3">Status Inquiry</option>
+                            </select>
+                        </div>
+
+                        </div>
+
+                    <div class="right-half-container">
+                        <div class="terminal-container" id="sample-code">
+
+                            <pre class="highlight http">
+<code><span class="nf">POST</span> <span class="nn">/v1/payment_methods.&lt;format&gt;</span> <span class="k">HTTPS</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">Your host name here</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Your authorization code here</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">Your application format here</span>
+</code>
+
+</pre>
+
+<!--<pre class="highlight json" style="display: block;"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"credit_card"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joe"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jones"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5555555555554444"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"verification_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">423</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"month"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"year"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2032"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"joey@example.com"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>-->
+
+                        </div>
+                    </div>
+
+                </div>
+
+<div class="row-fluid">
+           
+<div class="mainHeading">
+Test Instrument            </div>          
+
+ <p>Add a credit card to the authenticated environment’s vault.
+
+To create a credit card for testing, use one of the test credit card numbers. For more information about testing on Spreedly, please see this guide.</p>
+
+<div class="btn-container">
+<button type="button" class="btn btn-primary pull-right" onclick="goToStep3()">Test Transaction</button>
+                </div>
+
+             </div>
+
+             
+
+            </div>
+
+          
+
+
+           
+
+        </div>
+    </div>
+</body>
+
+
+</html>
+<style type="text/css">
+
+    .s:after{
+           content: '\003e';
+    }
+
+     .s:before{
+           content: '\003c';
+    }
+
+    .fa-angle-right{
+        height: 15px;
+        width: 15px;
+        color: white;
+        position: absolute;
+
+          right: 35px;
+    top: 8px;
+    font-size: 20px;
+    }
+
+
+
+    .collapse {
+        transition: 1s;
+    }
+</style>
+
+<script>
+
+    $("#selectInst").on("change", function () {
+        checkMODE();
+    });
+
+    function checkMODE() {
+
+        $("#selectedMode").remove();
+        $("pre").empty();
+
+        var selection = $("#selectInst").val();
+        var selectedValue;
+
+        if (selection == 1) {
+            selectedValue = "Wallet API";
+        }
+
+        else if (selection == 2) {
+            selectedValue = "Voucher";
+        }
+
+        else if (selection == 3) {
+            selectedValue = "Status Inquiry";
+        }
+
+        var modeStr = 
+                      '<span class="na">Mode</span>' +
+                      '<span class="p">:</span>' +
+                      '<span class="s">' + selectedValue + '</span>' +
+                     
+                      '<br />';
+
+        $(modeStr).appendTo("pre");
+        populatecode();
+
+
+
+    }
+
+    function populatecode() {
+
+        var APIobj = [{
+
+
+            variableName: "pp_Version",
+            variableValue: "Format"
+        },
+
+        {
+            variableName: "pp_Version",
+            variableValue: "Format"
+        },
+
+        {
+            variableName: "pp_Language",
+            variableValue: "Format"
+        },
+
+        {
+            variableName: "pp_MerchantID",
+            variableValue: "Format"
+        },
+
+        {
+            variableName: "pp_MerchantID",
+            variableValue: "Format"
+        }];
+
+    
+
+            for (i = 0 ; i < APIobj.length ; i++) {
+
+                var codeStr = '<span class="na">' + APIobj[i].variableName + '</span>' +
+                              '<span class="p">:</span>' +
+                                  '<span class="s">Your ' + APIobj[i].variableValue + ' here</span>' +
+                    '<br />';
+
+                //var codeStr = '<span class="na">' + "Variable name" + '</span>' +
+                //       '<span class="p">:</span>' +
+                //       '<span class="s">Your ' + "Your code here" + ' here</span>' +
+                //    '<br />';
+
+
+                $(codeStr).appendTo("pre");
+
+            }
+   
+        }
+
+    function goToStep1() {
+        location.href = "_Layout-PMCL-TestingPortal.html";
+    }
+
+    function goToStep3() {
+        location.href = "_Layout-PMCL-TestingPortal-CodeTest-Console.html";
+    }
+
+    $(document).ready(function () {
+        var x = $(".content-area").height();
+        $(".main-menu").css("height", x);
+
+
+      
+    });
+
+    $("#prism-logo").on("click", function () {
+        location.href = "_Layout-PMCL-GettingStarted.html";
+    });
+
+    $("#logout-now").on("click", function () {
+        location.href = "_Layout-PMCL-Index.html";
+    });
+
+    $(".hamburger-container").on("click", function () {
+
+
+        if ($(".main-menu").hasClass("collapse")) {
+
+           
+            setTimeout(function () {
+                $(".main-menu").removeClass("collapse");
+            }, 200);
+
+            $(".content-area").removeClass("expanded");
+
+
+        
+        }
+
+        else {
+
+            setTimeout(function () {
+                $(".content-area").addClass("expanded");
+            }, 200);
+
+            $(".main-menu").addClass("collapse");
+
+ 
+        }
+    });
+
+    //$('#hamburger').click(function () {
+        //$('.main-menu').fadeOut(1000);
+    //})
+</script>
